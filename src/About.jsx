@@ -26,13 +26,14 @@ const About = () => {
   return (
     <motion.div
       id='about'
-      className='h-screen w-full max-w-lg flex flex-col justify-center gap-2'
+      className='h-screen w-full flex flex-col items-center justify-center'
     >
       {/* Wrapper */}
       <motion.div
         variants={parentVariants}
         initial='hidden'
         animate={isInView ? 'visible' : 'hidden'}
+        className='max-w-96 flex flex-col items-start gap-2'
       >
         {/* Title */}
         <motion.div className='relative w-fit' variants={childVariants}>
@@ -91,7 +92,7 @@ const About = () => {
             impactful digital experiences.
           </span>
         </motion.p>
-        <motion.div className='mt-8' variants={childVariants}>
+        <motion.div className='mt-8 w-full' variants={childVariants}>
           <CTA scrollToElement={'projects'}>projects</CTA>
         </motion.div>
       </motion.div>
