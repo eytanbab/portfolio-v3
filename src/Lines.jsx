@@ -2,7 +2,7 @@ import { motion } from 'motion/react';
 
 const Lines = () => {
   return (
-    <>
+    <div className='h-screen'>
       <motion.div
         initial={{ x: 0 }}
         animate={{ x: '-250vh' }}
@@ -27,7 +27,7 @@ const Lines = () => {
       >
         <h1 className='text-7xl font-bold'>Music Producer</h1>
       </motion.div>
-    </>
+    </div>
   );
 };
 
