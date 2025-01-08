@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import Content from './Content';
 import { motion } from 'motion/react';
-
+import ScrollToTop from './ScrollToTop';
 function App() {
   const [showIntro, setShowIntro] = useState(false);
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
@@ -21,28 +21,29 @@ function App() {
   return (
     <div
       onMouseMove={handleMouseMove}
-      className='h-screen w-full absolute inset-0 overflow-x-hidden text-slate-50 bg-slate-950 font-spaceGrotesk'
+      className='w-full min-h-screen overflow-x-hidden text-slate-50 bg-slate-950 font-spaceGrotesk'
     >
-      <AnimatePresence>
-        <motion.div
-          className='pointer-events-none z-50 mix-blend-difference'
-          animate={{
-            x: cursorPosition.x - 12, // Center horizontally
-            y: cursorPosition.y - 12, // Center vertically
-          }}
-          transition={{
-            type: 'tween',
-            duration: 0.1,
-          }}
-          style={{
-            width: '24px',
-            height: '24px',
-            borderRadius: '50%',
-            backgroundColor: 'white',
-          }}
-        />
-        {showIntro ? <Lines /> : <Content />}
-      </AnimatePresence>
+      {/* Mouse Follower */}
+      <motion.div
+        className='pointer-events-none fixed z-50 mix-blend-difference hidden xl:block'
+        animate={{
+          x: cursorPosition.x - 8, // Center horizontally
+          y: cursorPosition.y - 8, // Center vertically
+        }}
+        transition={{
+          type: 'tween',
+          duration: 0.1,
+        }}
+        style={{
+          width: '16px',
+          height: '16px',
+          borderRadius: '50%',
+          backgroundColor: 'white',
+        }}
+      />
+      <AnimatePresence>{showIntro ? <Lines /> : <Content />}</AnimatePresence>
+
+      <ScrollToTop />
     </div>
   );
 }
