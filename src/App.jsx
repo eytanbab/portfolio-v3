@@ -1,10 +1,11 @@
 import Lines from './Lines';
-import { AnimatePresence } from 'framer-motion';
+import { AnimatePresence } from 'motion/react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import Content from './Content';
 import { motion } from 'motion/react';
 import ScrollToTop from './ScrollToTop';
+
 function App() {
   const [showIntro, setShowIntro] = useState(false);
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
