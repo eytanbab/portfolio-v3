@@ -11,8 +11,8 @@ const About = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 1, // Delay between children animations
-        duration: 0.5, // Duration of the parent animation
+        staggerChildren: 1,
+        duration: 0.5,
         ease: 'easeInOut',
       },
     },
@@ -20,7 +20,7 @@ const About = () => {
 
   const childVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.3 } },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   };
 
   return (
