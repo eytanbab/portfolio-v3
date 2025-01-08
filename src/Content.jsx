@@ -75,7 +75,11 @@ const Content = () => {
         </div>
 
         {/* CTA Button */}
-        <motion.div variants={item} className='mt-8'>
+        <motion.div
+          transition={{ duration: 0.5, delay: 3 }}
+          variants={item}
+          className='mt-8'
+        >
           <CTA scrollToElement='about'>Learn More</CTA>
         </motion.div>
       </motion.div>
