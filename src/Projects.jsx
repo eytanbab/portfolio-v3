@@ -1,9 +1,11 @@
-import { motion, useInView } from 'motion/react';
-import { useRef } from 'react';
+import { AnimatePresence, motion, useInView } from 'motion/react';
+import { useRef, useState } from 'react';
 
 const Projects = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
+
+  const [hovered, setHovered] = useState(false);
 
   const parentVariants = {
     hidden: { opacity: 0 },
@@ -20,6 +22,11 @@ const Projects = () => {
   const childVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  };
+
+  const hoverVariants = {
+    hidden: { x: '-300px' },
+    visible: { x: '0' },
   };
 
   return (
@@ -53,14 +60,33 @@ const Projects = () => {
           className='flex flex-col items-center justify-center rounded-md'
         >
           {/* Project */}
-          <motion.div className='relative group'>
+          <motion.div
+            className='relative group overflow-hidden'
+            onMouseEnter={() => setHovered(true)}
+            onMouseLeave={() => setHovered(false)}
+          >
             <motion.h1 className='text-4xl'>Markdown Editor</motion.h1>
             {/* Underline */}
-            <motion.div className='hidden xl:block absolute w-full left-0 bottom-0  h-1 rounded-full bg-pink-500 transition-transform scale-x-0 group-hover:scale-x-100 duration-300 origin-left ease-in-out' />
+            <AnimatePresence>
+              {hovered && (
+                <motion.div
+                  variants={hoverVariants}
+                  initial='hidden'
+                  animate={hovered ? 'visible' : 'hidden'} // can work without it idk how lol
+                  exit={{ x: '300px' }}
+                  transition={{ duration: 0.5, ease: 'easeInOut' }}
+                  className='hidden xl:block absolute w-full left-0 bottom-0 h-0.5 rounded-full bg-pink-500 '
+                />
+              )}
+            </AnimatePresence>
           </motion.div>
-          <div className='mt-1 w-full flex gap-4'>
-            <p>Live site</p>
-            <p>github</p>
+          <div className='mt-1 w-full flex gap-4 text-slate-300 '>
+            <p className='hover:text-pink-500 transition-colors duration-300 ease-in-out'>
+              Live site
+            </p>
+            <p className='hover:text-pink-500 transition-colors duration-300 ease-in-out'>
+              github
+            </p>
           </div>
         </motion.div>
       </motion.div>
