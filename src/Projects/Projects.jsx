@@ -53,10 +53,11 @@ const Projects = () => {
             className='absolute bottom-0.5 w-full h-px rounded-full bg-pink-500'
           />
         </motion.div>
+
         {/* Projects section wrapper */}
         <motion.div
           variants={childVariants}
-          className='flex flex-col items-start justify-center gap-1'
+          className='flex flex-col items-start justify-center gap-4'
         >
           {data.map((project) => {
             return <Project key={project.link} project={project} />;
