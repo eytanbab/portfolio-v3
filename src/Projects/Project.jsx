@@ -11,8 +11,18 @@ const Project = ({ project }) => {
     visible: { x: '0', opacity: 1 },
   };
 
+  const childVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 1, ease: 'easeInOut' },
+    },
+  };
+
   return (
     <motion.div
+      variants={childVariants}
       className='relative group flex flex-col items-start overflow-hidden text-left'
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
@@ -58,8 +68,12 @@ const Project = ({ project }) => {
       <div className='flex gap-2'>
         {project.techUsed.map((tech) => {
           return (
-            <div key={tech} className='flex group/tech gap-2'>
+            <div
+              key={tech}
+              className='flex text-slate-300 group-hover:text-slate-50 transition-colors duration-300 ease-in-out group/tech gap-2'
+            >
               <span>{tech}</span>
+              {/* Vertical divider */}
               <div className='h-full w-px bg-slate-500 group-last/tech:bg-transparent' />
             </div>
           );
@@ -69,7 +83,7 @@ const Project = ({ project }) => {
       <motion.a
         href={project.repo}
         target='_blank'
-        className='hover:text-pink-500 transition-colors duration-500 ease-in-out text-slate-500'
+        className='hover:text-pink-500 group-hover:text-slate-50 transition-colors duration-500 ease-in-out text-slate-500'
         whileTap={{ scale: 0.95 }}
       >
         github
