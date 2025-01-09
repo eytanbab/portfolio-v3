@@ -1,17 +1,26 @@
-import { motion } from 'motion/react';
+import { motion, useMotionValueEvent, useScroll } from 'motion/react';
+import { useState } from 'react';
 
 const ScrollToTop = () => {
+  const [disabled, setDisabled] = useState(true);
+  const { scrollYProgress } = useScroll();
+
+  useMotionValueEvent(scrollYProgress, 'change', (latest) => {
+    latest === 0 ? setDisabled(true) : setDisabled(false);
+  });
+
   return (
     <motion.button
-      initial={{ backgroundColor: '#f8fafc' }}
+      disabled={disabled}
       whileHover={{
-        scale: 1.1,
+        scale: disabled ? 1 : 1.1,
         transition: { duration: 0.3, ease: 'easeInOut' },
-        backgroundColor: '#ec4899',
       }}
-      whileTap={{ scale: 0.9 }}
-      className='fixed right-4 bottom-4 rounded-full p-2'
-      onClick={() => scrollTo({ top: 0, behavior: 'smooth' })}
+      whileTap={{ scale: disabled ? 1 : 0.9 }}
+      className='fixed right-4 bottom-4 rounded-full p-2 bg-slate-50 hover:bg-pink-500 transition-colors duration-300 ease-in-out disabled:bg-slate-600'
+      onClick={() => {
+        scrollTo({ top: 0, behavior: 'smooth' });
+      }}
     >
       <motion.svg
         height='16px'
