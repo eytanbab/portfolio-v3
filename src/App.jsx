@@ -1,6 +1,3 @@
-import Lines from './Lines';
-import { AnimatePresence } from 'motion/react';
-import { useEffect } from 'react';
 import { useState } from 'react';
 import Content from './Content';
 import { motion } from 'motion/react';
@@ -8,17 +5,12 @@ import ScrollToTop from './ScrollToTop';
 import './App.css';
 
 function App() {
-  const [showIntro, setShowIntro] = useState(false);
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
 
   // Update cursor position on mouse move
   const handleMouseMove = (e) => {
     setCursorPosition({ x: e.clientX, y: e.clientY });
   };
-
-  useEffect(() => {
-    setTimeout(() => setShowIntro(false), 3100);
-  }, []);
 
   return (
     <div
@@ -43,7 +35,7 @@ function App() {
           backgroundColor: 'white',
         }}
       />
-      <AnimatePresence>{showIntro ? <Lines /> : <Content />}</AnimatePresence>
+      <Content />
 
       <ScrollToTop />
     </div>
