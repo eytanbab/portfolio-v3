@@ -5,6 +5,7 @@ import { useState } from 'react';
 import Content from './Content';
 import { motion } from 'motion/react';
 import ScrollToTop from './ScrollToTop';
+import './App.css';
 
 function App() {
   const [showIntro, setShowIntro] = useState(false);
@@ -22,7 +23,7 @@ function App() {
   return (
     <div
       onMouseMove={handleMouseMove}
-      className='w-full min-h-screen overflow-x-hidden text-slate-50 bg-slate-950 font-spaceGrotesk'
+      className='w-full min-h-screen overflow-x-hidden text-slate-50 font-spaceGrotesk'
     >
       {/* Mouse Follower */}
       <motion.div
