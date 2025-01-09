@@ -1,5 +1,7 @@
+import { easeInOut } from 'motion';
 import { AnimatePresence, motion, useInView } from 'motion/react';
 import { useRef, useState } from 'react';
+import { FaArrowRight } from 'react-icons/fa6';
 
 const Projects = () => {
   const ref = useRef(null);
@@ -21,10 +23,10 @@ const Projects = () => {
 
   const childVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+    visible: { opacity: 1, y: 0, transition: { duration: 1, ease: easeInOut } },
   };
 
-  const hoverVariants = {
+  const underlineVariants = {
     hidden: { x: '-300px' },
     visible: { x: '0' },
   };
@@ -65,29 +67,52 @@ const Projects = () => {
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
           >
-            <motion.h1 className='text-4xl'>Markdown Editor</motion.h1>
-            {/* Underline */}
-            <AnimatePresence>
-              {hovered && (
-                <motion.div
-                  variants={hoverVariants}
-                  initial='hidden'
-                  animate={hovered ? 'visible' : 'hidden'} // can work without it idk how lol
-                  exit={{ x: '300px' }}
-                  transition={{ duration: 0.5, ease: 'easeInOut' }}
-                  className='hidden xl:block absolute w-full left-0 bottom-0 h-0.5 rounded-full bg-pink-500 '
-                />
-              )}
-            </AnimatePresence>
+            <div className='w-full flex gap-2 items-center justify-center relative'>
+              <motion.a
+                href='https://7wells-markdown-editor.netlify.app/'
+                target='_blank'
+                className='text-4xl'
+                whileTap={{ scale: 0.95 }}
+              >
+                Markdown Editor
+              </motion.a>
+              {/* Underline */}
+              <AnimatePresence>
+                {hovered && (
+                  <>
+                    <motion.div
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0, rotate: -45 }}
+                      exit={{ opacity: 0, x: 20 }}
+                      transition={{ duration: 0.5, ease: 'easeInOut' }}
+                    >
+                      <FaArrowRight size={24} />
+                    </motion.div>
+                    <motion.div
+                      variants={underlineVariants}
+                      initial='hidden'
+                      animate={hovered ? 'visible' : 'hidden'} // can work without it idk how lol
+                      exit={{ x: '300px' }}
+                      transition={{ duration: 0.5, ease: 'easeInOut' }}
+                      className='hidden xl:block absolute w-full left-0 bottom-0 h-0.5 rounded-full bg-pink-500 '
+                    />
+                  </>
+                )}
+              </AnimatePresence>
+            </div>
+
+            {/* Github link */}
+            <div className='w-full flex gap-4 text-slate-300 '>
+              <motion.a
+                href='https://github.com/eytanbab/react/tree/master/markdown-editor'
+                target='_blank'
+                className='hover:text-pink-500 transition-colors duration-300 ease-in-out'
+                whileTap={{ scale: 0.95 }}
+              >
+                github
+              </motion.a>
+            </div>
           </motion.div>
-          <div className='mt-1 w-full flex gap-4 text-slate-300 '>
-            <p className='hover:text-pink-500 transition-colors duration-300 ease-in-out'>
-              Live site
-            </p>
-            <p className='hover:text-pink-500 transition-colors duration-300 ease-in-out'>
-              github
-            </p>
-          </div>
         </motion.div>
       </motion.div>
     </motion.div>
