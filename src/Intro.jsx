@@ -100,6 +100,7 @@ const Intro = () => {
           variants={childVariants}
         >
           <motion.a
+            whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             href='https://github.com/eytanbab'
             target='_blank'
@@ -110,6 +111,7 @@ const Intro = () => {
             />
           </motion.a>
           <motion.a
+            whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             href='https://www.linkedin.com/in/ethan-babaev/'
             target='_blank'
@@ -120,6 +122,7 @@ const Intro = () => {
             />
           </motion.a>
           <motion.a
+            whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             href='https://drive.google.com/file/d/1yCg-B6YAWPD5iIJHXEJX32xnSSScFd9D/view?usp=sharing'
             target='_blank'
@@ -130,6 +133,7 @@ const Intro = () => {
             />
           </motion.a>
           <motion.a
+            whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             href='mailto:ethan.babaev@gmail.com'
           >
