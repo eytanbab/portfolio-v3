@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import { useEffect } from 'react';
 
 // eslint-disable-next-line react/prop-types
-export const CTA = ({ children, scrollToElement }) => {
+const CTA = ({ children, scrollToElement }) => {
   const boxRef = useRef(null);
 
   const handleClickScroll = () => {
@@ -40,3 +40,5 @@ export const CTA = ({ children, scrollToElement }) => {
     </div>
   );
 };
+
+export default CTA;
