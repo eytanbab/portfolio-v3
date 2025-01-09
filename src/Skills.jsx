@@ -27,7 +27,7 @@ const Skills = () => {
   return (
     <motion.div
       id='skills'
-      className='w-full flex flex-col items-center justify-center'
+      className='w-full h-screen flex flex-col items-center justify-center'
     >
       {/* Wrapper */}
       <motion.div
