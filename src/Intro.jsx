@@ -37,7 +37,7 @@ const Intro = () => {
 
   return (
     <motion.div
-      id='about'
+      id='intro'
       className='h-screen w-full flex flex-col items-center justify-center oveflow-hidden relative'
     >
       {/* Wrapper */}
@@ -83,6 +83,7 @@ const Intro = () => {
             }}
             className='mt-4 px-2 py-1 rounded-md flex items-center justify-center gap-2 text-emerald-500 relative'
           >
+            {/* Work status text */}
             <span className='before:content-[""] before:absolute before:inset-0 before:w-full before:bg-emerald-500/50 before:blur-2xl before:rounded-full'>
               Open to work
             </span>
