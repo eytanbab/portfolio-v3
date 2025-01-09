@@ -2,7 +2,8 @@ import { AnimatePresence, motion } from 'motion/react';
 import { useEffect, useState } from 'react';
 import { CTA } from './CTA';
 import About from './About';
-import Projects from './Projects';
+import Projects from './Projects/Projects';
+import Skills from './Skills';
 
 const Content = () => {
   const titles = ['Fullstack Developer', 'UX/UI Designer', 'Music Producer'];
@@ -84,6 +85,7 @@ const Content = () => {
         </motion.div>
       </motion.div>
       <About />
+      <Skills />
       <Projects />
     </motion.div>
   );
