@@ -27,8 +27,8 @@ const Projects = () => {
   };
 
   const underlineVariants = {
-    hidden: { x: '-300px' },
-    visible: { x: '0' },
+    hidden: { x: '-384px', opacity: 0.8 },
+    visible: { x: '0', opacity: 1 },
   };
 
   return (
@@ -76,10 +76,10 @@ const Projects = () => {
               >
                 Markdown Editor
               </motion.a>
-              {/* Underline */}
               <AnimatePresence>
                 {hovered && (
                   <>
+                    {/* Arrow */}
                     <motion.div
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0, rotate: -45 }}
@@ -88,11 +88,12 @@ const Projects = () => {
                     >
                       <FaArrowRight size={24} />
                     </motion.div>
+                    {/* Underline */}
                     <motion.div
                       variants={underlineVariants}
                       initial='hidden'
                       animate={hovered ? 'visible' : 'hidden'} // can work without it idk how lol
-                      exit={{ x: '300px' }}
+                      exit={{ x: '384px', opacity: 0.5 }}
                       transition={{ duration: 0.5, ease: 'easeInOut' }}
                       className='hidden xl:block absolute w-full left-0 bottom-0 h-0.5 rounded-full bg-pink-500 '
                     />
