@@ -19,6 +19,18 @@ const Projects = () => {
     },
   };
 
+  const projectParentVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        duration: 0.5,
+        ease: 'easeInOut',
+      },
+    },
+  };
+
   const childVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
@@ -55,14 +67,16 @@ const Projects = () => {
         </motion.div>
 
         {/* Projects section wrapper */}
-        <motion.div
-          variants={childVariants}
-          className='flex flex-col items-start justify-center gap-4'
-        >
-          {data.map((project) => {
-            return <Project key={project.link} project={project} />;
-          })}
+        <motion.div variants={childVariants} className=''>
           {/* Project */}
+          <motion.div
+            className='flex flex-col items-start justify-center gap-4'
+            variants={projectParentVariants}
+          >
+            {data.map((project) => {
+              return <Project key={project.link} project={project} />;
+            })}
+          </motion.div>
         </motion.div>
       </motion.div>
     </motion.div>
