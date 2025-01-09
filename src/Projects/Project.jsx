@@ -13,17 +13,17 @@ const Project = ({ project }) => {
 
   return (
     <motion.div
-      className='relative group overflow-hidden'
+      className='relative group flex flex-col items-start overflow-hidden text-left'
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
       {/* Project name wrapper */}
-      <div className='w-full flex items-center gap-4 justify-center relative group'>
+      <div className='flex items-center gap-4 justify-start relative group'>
         {/* Project name */}
         <motion.a
           href={project.link}
           target='_blank'
-          className='text-slate-300 text-4xl group-hover:text-slate-50 duration-500 ease-in-out'
+          className='text-slate-300 text-4xl group-hover:text-slate-50 duration-500 ease-in-out self-start'
           whileTap={{ scale: 0.95 }}
         >
           {project.projectName}
@@ -54,7 +54,17 @@ const Project = ({ project }) => {
           )}
         </AnimatePresence>
       </div>
-
+      {/* Tech used */}
+      <div className='flex gap-2'>
+        {project.techUsed.map((tech) => {
+          return (
+            <div key={tech} className='flex group/tech gap-2'>
+              <span>{tech}</span>
+              <div className='h-full w-px bg-slate-500 group-last/tech:bg-transparent' />
+            </div>
+          );
+        })}
+      </div>
       {/* Github link */}
       <motion.a
         href={project.repo}
