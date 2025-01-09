@@ -1,6 +1,6 @@
 import { motion, useInView } from 'motion/react';
 import { useRef } from 'react';
-import { CTA } from './CTA';
+import CTA from './CTA';
 
 const About = () => {
   const ref = useRef(null);
