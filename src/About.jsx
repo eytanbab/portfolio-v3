@@ -20,7 +20,11 @@ const About = () => {
 
   const childVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 1, ease: 'easeInOut' },
+    },
   };
 
   return (
@@ -33,7 +37,7 @@ const About = () => {
         variants={parentVariants}
         initial='hidden'
         animate={isInView ? 'visible' : 'hidden'}
-        className='max-w-96 flex flex-col items-start gap-2'
+        className='w-96 flex flex-col items-start gap-2'
       >
         {/* Title */}
         <motion.div className='relative w-fit' variants={childVariants}>
