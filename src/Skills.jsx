@@ -17,10 +17,19 @@ const Skills = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 1,
+        staggerChildren: 0.1,
         duration: 0.5,
         ease: 'easeInOut',
       },
+    },
+  };
+
+  const childVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 1, ease: 'easeInOut' },
     },
   };
 
@@ -37,18 +46,42 @@ const Skills = () => {
         animate={isInView ? 'visible' : 'hidden'}
         className='w-96 grid grid-cols-4 gap-12 place-items-center text-slate-50 '
       >
-        <FaReact size={40} />
-        <RiNextjsLine size={40} />
-        <RiTailwindCssFill size={40} />
-        <TbBrandFramerMotion size={40} />
-        <TbBrandTypescript size={40} />
-        <DiPostgresql size={40} />
-        <SiExpress size={40} />
-        <AiOutlinePython size={40} />
-        <FaFigma size={40} />
-        <FaGitAlt size={40} />
-        <SiPostman size={40} />
-        <LiaJira size={40} />
+        <motion.div>
+          <FaReact size={40} />
+        </motion.div>
+        <motion.div variants={childVariants}>
+          <RiNextjsLine size={40} />
+        </motion.div>
+        <motion.div variants={childVariants}>
+          <RiTailwindCssFill size={40} />
+        </motion.div>
+        <motion.div variants={childVariants}>
+          <TbBrandFramerMotion size={40} />
+        </motion.div>
+        <motion.div variants={childVariants}>
+          <TbBrandTypescript size={40} />
+        </motion.div>
+        <motion.div variants={childVariants}>
+          <DiPostgresql size={40} />
+        </motion.div>
+        <motion.div variants={childVariants}>
+          <SiExpress size={40} />
+        </motion.div>
+        <motion.div variants={childVariants}>
+          <AiOutlinePython size={40} />
+        </motion.div>
+        <motion.div variants={childVariants}>
+          <FaFigma size={40} />
+        </motion.div>
+        <motion.div variants={childVariants}>
+          <FaGitAlt size={40} />
+        </motion.div>
+        <motion.div variants={childVariants}>
+          <SiPostman size={40} />
+        </motion.div>
+        <motion.div variants={childVariants}>
+          <LiaJira size={40} />
+        </motion.div>
       </motion.div>
     </motion.div>
   );
