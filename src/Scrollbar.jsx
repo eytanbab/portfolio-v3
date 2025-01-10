@@ -24,36 +24,36 @@ const Scrollbar = () => {
 
   return (
     <div className='hidden xl:block'>
+      {/* Scroll text indicator*/}
+      <AnimatePresence>
+        {text && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <motion.div
+              animate={{ opacity: [0.25, 1, 1, 0.25] }}
+              transition={{
+                duration: 2.5,
+                ease: 'easeInOut',
+                repeat: Infinity,
+              }}
+              className='fixed top-1/2 -translate-y-1/2 right-12 text-slate-300 flex flex-col items-center animate-pulse'
+            >
+              <motion.span className='font-light'>{text}</motion.span>
+              <FaArrowDown />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       {/* Scrollbar background */}
       <motion.div
         style={{ borderRadius: '9999px' }}
         className={`fixed bg-slate-400
            w-2 h-96 top-1/2 -translate-y-1/2 right-8 overflow-hidden`}
       >
-        {/* Scroll text indicator*/}
-        <AnimatePresence>
-          {text && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-            >
-              <motion.div
-                animate={{ opacity: [0.25, 1, 1, 0.25] }}
-                transition={{
-                  duration: 2.5,
-                  ease: 'easeInOut',
-                  repeat: Infinity,
-                }}
-                className='fixed top-1/2 -translate-1/2 right-4 text-slate-300 flex flex-col items-center animate-pulse'
-              >
-                <motion.span className='font-light'>{text}</motion.span>
-                <FaArrowDown />
-              </motion.div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-
         {/* Scrollbar filler */}
         <motion.div
           style={{
