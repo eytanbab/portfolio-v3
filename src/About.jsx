@@ -88,7 +88,7 @@ const About = () => {
           </span>{' '}
           In addition to my technical skills, I’ve been{' '}
           <span className='font-medium text-slate-50'>producing music</span> for
-          the past <span className='font-medium text-slate-50'>10 years.</span>{' '}
+          the past <span className='font-medium text-slate-50'>12 years.</span>{' '}
           I’m currently{' '}
           <span className='font-medium text-slate-50'>looking for a job</span>{' '}
           where I can apply my skills and passion to create{' '}
