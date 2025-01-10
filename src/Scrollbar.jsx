@@ -31,16 +31,22 @@ const Scrollbar = () => {
         <AnimatePresence>
           {text && (
             <motion.div
-              animate={{ opacity: [0.25, 1, 1, 0.25] }}
-              transition={{
-                duration: 2.5,
-                ease: 'easeInOut',
-                repeat: Infinity,
-              }}
-              className='fixed top-1/2 -translate-1/2 right-4 text-slate-300 flex flex-col items-center animate-pulse'
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
             >
-              <motion.span>{text}</motion.span>
-              <FaArrowDown />
+              <motion.div
+                animate={{ opacity: [0.25, 1, 1, 0.25] }}
+                transition={{
+                  duration: 2.5,
+                  ease: 'easeInOut',
+                  repeat: Infinity,
+                }}
+                className='fixed top-1/2 -translate-1/2 right-4 text-slate-300 flex flex-col items-center animate-pulse'
+              >
+                <motion.span>{text}</motion.span>
+                <FaArrowDown />
+              </motion.div>
             </motion.div>
           )}
         </AnimatePresence>
