@@ -33,7 +33,7 @@ const Project = ({ project }) => {
         <motion.a
           href={project.link}
           target='_blank'
-          className='text-slate-300 text-4xl group-hover:text-slate-50 duration-500 ease-in-out self-start'
+          className='text-slate-200 text-3xl xl:text-4xl group-hover:text-slate-50 duration-500 ease-in-out self-start'
           whileTap={{ scale: 0.95 }}
         >
           {project.projectName}
@@ -70,7 +70,7 @@ const Project = ({ project }) => {
           return (
             <div
               key={tech}
-              className='flex text-slate-300 group-hover:text-slate-50 transition-colors duration-300 ease-in-out group/tech gap-2'
+              className='flex text-slate-300 group-hover:text-slate-50 transition-colors duration-300 ease-in-out group/tech gap-2 text-sm xl:text-base'
             >
               <span>{tech}</span>
               {/* Vertical divider */}
@@ -83,7 +83,7 @@ const Project = ({ project }) => {
       <motion.a
         href={project.repo}
         target='_blank'
-        className='hover:text-pink-500 group-hover:text-slate-50 transition-colors duration-500 ease-in-out text-slate-500'
+        className='mt-1 group-hover:text-slate-50 transition-colors duration-500 ease-in-out text-slate-400 text-sm xl:text-base'
         whileTap={{ scale: 0.95 }}
       >
         github
