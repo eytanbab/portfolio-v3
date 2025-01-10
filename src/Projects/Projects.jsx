@@ -51,7 +51,7 @@ const Projects = () => {
         variants={parentVariants}
         initial='hidden'
         animate={isInView ? 'visible' : 'hidden'}
-        className='w-96 flex flex-col items-start gap-2'
+        className='w-96 max-w-96 flex flex-col items-start gap-2'
       >
         {/* Title */}
         <motion.div className='relative w-fit' variants={childVariants}>
