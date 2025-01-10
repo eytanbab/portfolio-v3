@@ -59,40 +59,40 @@ const About = () => {
           className='font-light text-slate-300'
         >
           Hi, I’m Ethan, a{' '}
-          <span className='font-bold text-slate-50'>software engineer</span>{' '}
+          <span className='font-medium text-slate-50'>software engineer</span>{' '}
           with a{' '}
-          <span className='font-bold text-slate-50'>
+          <span className='font-medium text-slate-50'>
             BSc in Software Engineering.
           </span>{' '}
           I’ve been building{' '}
-          <span className='font-bold text-slate-50'>
+          <span className='font-medium text-slate-50'>
             user-friendly web applications
           </span>{' '}
           with tools like{' '}
-          <span className='font-bold text-slate-50'>
+          <span className='font-medium text-slate-50'>
             React, Next.js, and TypeScript,
           </span>{' '}
           creating projects like a{' '}
-          <span className='font-bold text-slate-50'>
+          <span className='font-medium text-slate-50'>
             financial tracker, markdown editor
           </span>{' '}
           and a{' '}
-          <span className='font-bold text-slate-50'>
+          <span className='font-medium text-slate-50'>
             job application tracker
           </span>{' '}
           from scratch. I’m also exploring{' '}
-          <span className='font-bold text-slate-50'>UX/UI design,</span> with
+          <span className='font-medium text-slate-50'>UX/UI design,</span> with
           recent work including a{' '}
-          <span className='font-bold text-slate-50'>
+          <span className='font-medium text-slate-50'>
             Spotify remake in Figma.
           </span>{' '}
           In addition to my technical skills, I’ve been{' '}
-          <span className='font-bold text-slate-50'>producing music</span> for
-          the past <span className='font-bold text-slate-50'>10 years.</span>{' '}
+          <span className='font-medium text-slate-50'>producing music</span> for
+          the past <span className='font-medium text-slate-50'>10 years.</span>{' '}
           I’m currently{' '}
-          <span className='font-bold text-slate-50'>looking for a job</span>{' '}
+          <span className='font-medium text-slate-50'>looking for a job</span>{' '}
           where I can apply my skills and passion to create{' '}
-          <span className='font-bold text-slate-50'>
+          <span className='font-medium text-slate-50'>
             impactful digital experiences.
           </span>
         </motion.p>
