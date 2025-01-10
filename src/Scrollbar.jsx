@@ -44,7 +44,7 @@ const Scrollbar = () => {
                 }}
                 className='fixed top-1/2 -translate-1/2 right-4 text-slate-300 flex flex-col items-center animate-pulse'
               >
-                <motion.span>{text}</motion.span>
+                <motion.span className='font-light'>{text}</motion.span>
                 <FaArrowDown />
               </motion.div>
             </motion.div>
