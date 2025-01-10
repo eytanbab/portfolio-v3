@@ -3,6 +3,7 @@ import About from './About';
 import Projects from './Projects/Projects';
 import Skills from './Skills';
 import Intro from './Intro';
+import Music from './Music';
 
 const Content = () => {
   return (
@@ -11,6 +12,7 @@ const Content = () => {
       <About />
       <Skills />
       <Projects />
+      <Music />
     </motion.div>
   );
 };
