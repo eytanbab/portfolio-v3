@@ -24,10 +24,13 @@ const Scrollbar = () => {
 
   return (
     <div className='hidden xl:block'>
+      {/* Scrollbar background */}
       <motion.div
         style={{ borderRadius: '9999px' }}
-        className={`fixed bg-slate-900 w-2 h-96 top-1/2 -translate-y-1/2 right-4`}
+        className={`fixed bg-slate-400
+           w-2 h-96 top-1/2 -translate-y-1/2 right-8 overflow-hidden`}
       >
+        {/* Scroll text indicator*/}
         <AnimatePresence>
           {text && (
             <motion.div
@@ -50,14 +53,16 @@ const Scrollbar = () => {
             </motion.div>
           )}
         </AnimatePresence>
+
+        {/* Scrollbar filler */}
         <motion.div
           style={{
             scaleY: scaleY,
             borderRadius: '9999px',
             originY: 0,
           }}
-          className={`absolute h-96 bg-pink-500 w-2 top-0 -translate-y-1/2 right-0`}
-        ></motion.div>
+          className={`absolute h-96 bg-pink-500 w-2 top-0 -translate-y-1/2 right-0 `}
+        />
       </motion.div>
     </div>
   );
