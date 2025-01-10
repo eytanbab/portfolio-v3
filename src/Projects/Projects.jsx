@@ -2,6 +2,7 @@ import { motion, useInView } from 'motion/react';
 import { useRef } from 'react';
 import { data } from '../../data';
 import Project from './Project';
+import CTA from '../CTA';
 
 const Projects = () => {
   const ref = useRef(null);
@@ -77,6 +78,9 @@ const Projects = () => {
               return <Project key={project.link} project={project} />;
             })}
           </motion.div>
+        </motion.div>
+        <motion.div variants={childVariants} className='w-full'>
+          <CTA scrollToElement='music'>music</CTA>
         </motion.div>
       </motion.div>
     </motion.div>
