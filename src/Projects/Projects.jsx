@@ -79,7 +79,7 @@ const Projects = () => {
             })}
           </motion.div>
         </motion.div>
-        <motion.div variants={childVariants} className='w-full'>
+        <motion.div variants={childVariants} className='mt-8 w-full'>
           <CTA scrollToElement='music'>music</CTA>
         </motion.div>
       </motion.div>
