@@ -81,7 +81,7 @@ const Intro = () => {
             animate={{ opacity: [0.25, 1, 1, 0.25] }}
             transition={{
               duration: 2.5,
-              ease: 'ease-in-out',
+              ease: 'easeInOut',
               repeat: Infinity,
             }}
             className='px-2 py-1 rounded-md flex items-center justify-center gap-2 text-emerald-500 relative'
