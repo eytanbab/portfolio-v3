@@ -44,7 +44,7 @@ const Skills = () => {
         variants={parentVariants}
         initial='hidden'
         animate={isInView ? 'visible' : 'hidden'}
-        className='w-96 grid grid-cols-4 gap-12 place-items-center text-slate-50 '
+        className='w-96 max-w-96 grid grid-cols-4 gap-12 place-items-center text-slate-50 '
       >
         <motion.div>
           <FaReact size={40} />
