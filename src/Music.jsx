@@ -1,5 +1,6 @@
 import { motion, useInView } from 'motion/react';
 import { useRef } from 'react';
+import { FaSoundcloud, FaYoutube } from 'react-icons/fa';
 
 const Music = () => {
   const ref = useRef(null);
@@ -69,6 +70,32 @@ const Music = () => {
           <span className='font-bold text-slate-50'></span> and helps inspired
           me grow as an <span className='font-bold text-slate-50'>artist.</span>
         </motion.p>
+
+        {/* Links*/}
+        <motion.div variants={childVariants} className='mt-4 w-full flex gap-4'>
+          <motion.a
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            href='https://soundcloud.com/7wells'
+            target='_blank'
+          >
+            <FaSoundcloud
+              size={40}
+              className='fill-slate-300 hover:fill-orange-500 transition-colors duration-300 ease-in-out'
+            />
+          </motion.a>
+          <motion.a
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            href='https://youtube.com/@7wells323?si=zMIny7W6_Lss3ZbA'
+            target='_blank'
+          >
+            <FaYoutube
+              size={40}
+              className='fill-slate-300 hover:fill-red-500 transition-colors duration-300 ease-in-out'
+            />
+          </motion.a>
+        </motion.div>
       </motion.div>
     </motion.div>
   );
