@@ -35,15 +35,15 @@ export const data: projectProps[] = [
     link: 'https://dict-web-app.netlify.app/',
     repo: 'https://github.com/eytanbab/react/tree/master/dictionary-web-app',
   },
-  {
-    projectName: 'Advice Generator',
-    projectDesc:
-      'Get instant guidance with our advice generator app! Simply click the button and receive a random piece of advice, based on expert insights and proven psychological principles.',
-    techUsed: ['React', 'Tailwind CSS', 'Advice Slip API'],
-    projectImagePath: '/mobile_images/advice_mobile.png',
-    link: 'https://advice-generator-7.netlify.app/',
-    repo: 'https://github.com/eytanbab/react/tree/master/advice-generator',
-  },
+  // {
+  //   projectName: 'Advice Generator',
+  //   projectDesc:
+  //     'Get instant guidance with our advice generator app! Simply click the button and receive a random piece of advice, based on expert insights and proven psychological principles.',
+  //   techUsed: ['React', 'Tailwind CSS', 'Advice Slip API'],
+  //   projectImagePath: '/mobile_images/advice_mobile.png',
+  //   link: 'https://advice-generator-7.netlify.app/',
+  //   repo: 'https://github.com/eytanbab/react/tree/master/advice-generator',
+  // },
   {
     projectName: 'Shortly',
     projectDesc:
@@ -53,15 +53,15 @@ export const data: projectProps[] = [
     link: 'https://url-shortener-2.netlify.app/',
     repo: 'https://github.com/eytanbab/react/tree/master/url-shortener-2',
   },
-  {
-    projectName: 'Weatherly',
-    projectDesc:
-      "Stay ahead of the weather with our user-friendly web app! With real-time updates and accurate forecasts, you'll always be prepared for whatever Mother Nature has in store. ",
-    techUsed: ['React', 'Tailwind CSS', 'weatherapi '],
-    projectImagePath: '/mobile_images/weatherly_mobile.png',
-    link: 'https://weatherly-web-app.netlify.app/',
-    repo: 'https://github.com/eytanbab/react/tree/master/weather-web-app',
-  },
+  // {
+  //   projectName: 'Weatherly',
+  //   projectDesc:
+  //     "Stay ahead of the weather with our user-friendly web app! With real-time updates and accurate forecasts, you'll always be prepared for whatever Mother Nature has in store. ",
+  //   techUsed: ['React', 'Tailwind CSS', 'weatherapi '],
+  //   projectImagePath: '/mobile_images/weatherly_mobile.png',
+  //   link: 'https://weatherly-web-app.netlify.app/',
+  //   repo: 'https://github.com/eytanbab/react/tree/master/weather-web-app',
+  // },
   // {
   //
   //   projectName: 'Tip calculator',
