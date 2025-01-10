@@ -15,7 +15,7 @@ function App() {
   return (
     <div
       onMouseMove={handleMouseMove}
-      className='w-full min-h-screen overflow-x-hidden text-slate-50 font-spaceGrotesk'
+      className='w-full min-h-screen text-slate-50 font-spaceGrotesk'
     >
       {/* Mouse Follower */}
       <motion.div
