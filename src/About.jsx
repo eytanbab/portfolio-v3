@@ -164,6 +164,34 @@ const About = () => {
             </li>
           </motion.ul>
         </motion.div>
+        {/* Divider */}
+        <motion.div
+          variants={childVariants}
+          className='flex gap-1 w-full items-center'
+        >
+          <div className='bg-slate-600/75 flex-1 h-px' />
+          <div className='bg-slate-600 size-1 rounded-full' />
+          <div className='bg-slate-600/75 flex-1 h-px' />
+        </motion.div>
+
+        {/* College and courses */}
+        {/* SCE */}
+        <motion.div variants={childVariants}>
+          <motion.div className='text-slate-50 w-full'>
+            <motion.h1 className='font-medium'>
+              BSc in Software Engineering
+            </motion.h1>
+            <motion.div className='flex justify-between w-full'>
+              <p className='text-xs'>
+                SCE - Sami Shamoon College of Engineering
+              </p>
+              <p className='text-xs font-light'>Oct 2019 – Sep 2023</p>
+            </motion.div>
+            <p className='text-sm font-light mt-1'>Be&apos;er Sheva, Israel</p>
+          </motion.div>
+        </motion.div>
+
+        {/* CTA */}
         <motion.div variants={childVariants} className='mt-8 w-full'>
           <CTA scrollToElement={'projects'}>projects</CTA>
         </motion.div>
