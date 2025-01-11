@@ -119,32 +119,6 @@ const Music = () => {
           me grow as an <span className='font-bold text-slate-50'>artist.</span>
         </motion.p>
 
-        {/* Links*/}
-        <motion.div variants={childVariants} className='mt-4 w-full flex gap-4'>
-          <motion.a
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            href='https://soundcloud.com/7wells'
-            target='_blank'
-          >
-            <FaSoundcloud
-              size={40}
-              className='fill-slate-300 hover:fill-[#FF6300] transition-colors duration-300 ease-in-out'
-            />
-          </motion.a>
-          <motion.a
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            href='https://youtube.com/@7wells323?si=zMIny7W6_Lss3ZbA'
-            target='_blank'
-          >
-            <FaYoutube
-              size={40}
-              className='fill-slate-300 hover:fill-[#FF0033] transition-colors duration-300 ease-in-out'
-            />
-          </motion.a>
-        </motion.div>
-
         {/* Tracks carousel */}
         <motion.div
           variants={childVariants}
@@ -226,6 +200,35 @@ const Music = () => {
           >
             <FaArrowRight size={16} />
           </motion.div>
+        </motion.div>
+
+        {/* Links*/}
+        <motion.div
+          variants={childVariants}
+          className='mt-8 w-full flex gap-4 items-center justify-center'
+        >
+          <motion.a
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            href='https://soundcloud.com/7wells'
+            target='_blank'
+          >
+            <FaSoundcloud
+              size={40}
+              className='fill-slate-300 hover:fill-[#FF6300] transition-colors duration-300 ease-in-out'
+            />
+          </motion.a>
+          <motion.a
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            href='https://youtube.com/@7wells323?si=zMIny7W6_Lss3ZbA'
+            target='_blank'
+          >
+            <FaYoutube
+              size={40}
+              className='fill-slate-300 hover:fill-[#FF0033] transition-colors duration-300 ease-in-out'
+            />
+          </motion.a>
         </motion.div>
       </motion.div>
     </motion.div>
