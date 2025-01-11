@@ -1,14 +1,22 @@
 import { useEffect, useState } from 'react';
-import { AnimatePresence, motion } from 'motion/react';
+import { AnimatePresence, motion, useInView } from 'motion/react';
 import CTA from './CTA';
 import { FaGithub, FaLinkedin } from 'react-icons/fa6';
 import { PiReadCvLogo } from 'react-icons/pi';
 import { MdAlternateEmail } from 'react-icons/md';
 
-const Intro = () => {
-  const titles = ['Fullstack Developer', 'UX/UI Designer', 'Music Producer'];
+// eslint-disable-next-line react/prop-types
+const Intro = ({ introRef, setActive }) => {
+  const activeInView = useInView(introRef);
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  const titles = ['Fullstack Developer', 'UX/UI Designer', 'Music Producer'];
+
+  useEffect(() => {
+    activeInView ? setActive('intro') : null;
+  }, [activeInView, setActive]);
+
+  // Titles change every 3.5 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((cur) => (cur + 1) % titles.length);
@@ -50,7 +58,11 @@ const Intro = () => {
         animate='visible'
         className='max-w-96 flex flex-col items-center gap-1  relative'
       >
-        <motion.h1 variants={childVariants} className='text-4xl font-semibold '>
+        <motion.h1
+          ref={introRef}
+          variants={childVariants}
+          className='text-4xl font-semibold '
+        >
           I&apos;m Ethan.
         </motion.h1>
 

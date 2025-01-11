@@ -1,13 +1,18 @@
 import { motion, useInView } from 'motion/react';
-import { useRef } from 'react';
 import { data } from '../../data';
 import Project from './Project';
 import CTA from '../CTA';
 import Skills from '../Skills';
+import { useEffect } from 'react';
 
-const Projects = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+// eslint-disable-next-line react/prop-types
+const Projects = ({ projectsRef, setActive }) => {
+  const activeInView = useInView(projectsRef);
+  const isInView = useInView(projectsRef, { once: true });
+
+  useEffect(() => {
+    activeInView ? setActive('projects') : null;
+  }, [activeInView, setActive]);
 
   const parentVariants = {
     hidden: { opacity: 0 },
@@ -56,7 +61,7 @@ const Projects = () => {
       >
         {/* Title */}
         <motion.div className='relative w-fit' variants={childVariants}>
-          <motion.h1 ref={ref} className='text-2xl'>
+          <motion.h1 ref={projectsRef} className='text-2xl'>
             projects
           </motion.h1>
           <motion.div

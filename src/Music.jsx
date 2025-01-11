@@ -1,5 +1,5 @@
 import { AnimatePresence, motion, useInView } from 'motion/react';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import {
   FaArrowLeft,
   FaArrowRight,
@@ -63,9 +63,10 @@ const swipePower = (offset, velocity) => {
   return Math.abs(offset) * velocity;
 };
 
-const Music = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+// eslint-disable-next-line react/prop-types
+const Music = ({ musicRef, setActive }) => {
+  const activeInView = useInView(musicRef);
+  const isInView = useInView(musicRef, { once: true });
   const [[page, direction], setPage] = useState([0, 0]);
 
   const trackIndex = wrap(0, tracks.length, page);
@@ -73,6 +74,10 @@ const Music = () => {
   const paginate = (newDirection) => {
     setPage([page + newDirection, newDirection]);
   };
+
+  useEffect(() => {
+    activeInView ? setActive('music') : null;
+  }, [activeInView, setActive]);
 
   return (
     <motion.div
@@ -88,7 +93,7 @@ const Music = () => {
       >
         {/* Title */}
         <motion.div className='relative w-fit' variants={childVariants}>
-          <motion.h1 ref={ref} className='text-2xl'>
+          <motion.h1 ref={musicRef} className='text-2xl'>
             music
           </motion.h1>
           <motion.div

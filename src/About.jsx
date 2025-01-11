@@ -1,10 +1,15 @@
 import { motion, useInView } from 'motion/react';
-import { useRef } from 'react';
+import { useEffect } from 'react';
 import CTA from './CTA';
 
-const About = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+// eslint-disable-next-line react/prop-types
+const About = ({ aboutRef, setActive }) => {
+  const activeInView = useInView(aboutRef);
+  const isInView = useInView(aboutRef, { once: true });
+
+  useEffect(() => {
+    activeInView ? setActive('about') : null;
+  }, [activeInView, setActive]);
 
   const parentVariants = {
     hidden: { opacity: 0 },
@@ -53,7 +58,7 @@ const About = () => {
       >
         {/* Title */}
         <motion.div className='relative' variants={childVariants}>
-          <motion.h1 ref={ref} className='text-2xl'>
+          <motion.h1 ref={aboutRef} className='text-2xl'>
             about
           </motion.h1>
           <motion.div
