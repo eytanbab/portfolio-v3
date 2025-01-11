@@ -39,9 +39,9 @@ const Scrollbar = () => {
                 ease: 'easeInOut',
                 repeat: Infinity,
               }}
-              className='fixed top-1/2 -translate-y-1/2 right-12 text-slate-300 flex flex-col items-center animate-pulse'
+              className='fixed top-1/2 -translate-y-1/2 right-12 text-slate-500 flex flex-col items-center animate-pulse font-light'
             >
-              <motion.span className='font-light'>{text}</motion.span>
+              <motion.span>{text}</motion.span>
               <FaArrowDown />
             </motion.div>
           </motion.div>
@@ -51,7 +51,7 @@ const Scrollbar = () => {
       {/* Scrollbar background */}
       <motion.div
         style={{ borderRadius: '9999px' }}
-        className={`fixed bg-slate-400
+        className={`fixed bg-slate-800
            w-2 h-96 top-1/2 -translate-y-1/2 right-8 overflow-hidden`}
       >
         {/* Scrollbar filler */}
