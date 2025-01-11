@@ -1,30 +1,79 @@
-import { motion, useInView } from 'motion/react';
-import { useRef } from 'react';
-import { FaSoundcloud, FaYoutube } from 'react-icons/fa';
+import { AnimatePresence, motion, useInView } from 'motion/react';
+import { useRef, useState } from 'react';
+import {
+  FaArrowLeft,
+  FaArrowRight,
+  FaSoundcloud,
+  FaYoutube,
+} from 'react-icons/fa';
+import { tracks } from '../data';
+import Track from './Track';
+import { wrap } from 'motion';
+import { track } from 'framer-motion/client';
+
+const parentVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 1,
+      duration: 0.5,
+      ease: 'easeInOut',
+    },
+  },
+};
+
+const childVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 1, ease: 'easeInOut' },
+  },
+};
+
+const variants = {
+  enter: (direction) => {
+    return {
+      x: direction > 0 ? 1000 : -1000,
+      opacity: 0,
+    };
+  },
+  center: {
+    zIndex: 1,
+    x: 0,
+    opacity: 1,
+  },
+  exit: (direction) => {
+    return {
+      zIndex: 0,
+      x: direction < 0 ? 1000 : -1000,
+      opacity: 0,
+    };
+  },
+};
+
+/**
+ * Experimenting with distilling swipe offset and velocity into a single variable, so the
+ * less distance a user has swiped, the more velocity they need to register as a swipe.
+ * Should accomodate longer swipes and short flicks without having binary checks on
+ * just distance thresholds and velocity > 0.
+ */
+const swipeConfidenceThreshold = 10000;
+const swipePower = (offset, velocity) => {
+  return Math.abs(offset) * velocity;
+};
 
 const Music = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
+  const [[page, direction], setPage] = useState([0, 0]);
 
-  const parentVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 1,
-        duration: 0.5,
-        ease: 'easeInOut',
-      },
-    },
-  };
+  const trackIndex = wrap(0, tracks.length, page);
 
-  const childVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 1, ease: 'easeInOut' },
-    },
+  const paginate = (newDirection) => {
+    setPage([page + newDirection, newDirection]);
+    console.log(`${(24 * page) % 120}px`);
   };
 
   return (
@@ -37,7 +86,7 @@ const Music = () => {
         variants={parentVariants}
         initial='hidden'
         animate={isInView ? 'visible' : 'hidden'}
-        className='w-96 flex flex-col items-start gap-2'
+        className='w-96 max-w-96 flex flex-col items-start gap-2'
       >
         {/* Title */}
         <motion.div className='relative w-fit' variants={childVariants}>
@@ -95,6 +144,79 @@ const Music = () => {
               className='fill-slate-300 hover:fill-red-500 transition-colors duration-300 ease-in-out'
             />
           </motion.a>
+        </motion.div>
+
+        {/* Tracks carousel */}
+        <motion.div className='w-full relative h-[214px] flex items-center justify-center'>
+          <AnimatePresence initial={false} custom={direction}>
+            <motion.div
+              className='absolute w-72'
+              key={tracks[trackIndex]}
+              src={tracks[trackIndex]}
+              custom={direction}
+              variants={variants}
+              initial='enter'
+              animate='center'
+              exit='exit'
+              transition={{
+                x: { type: 'spring', stiffness: 300, damping: 30 },
+                opacity: { duration: 0.2 },
+              }}
+              drag='x'
+              dragConstraints={{ left: 0, right: 0 }}
+              dragElastic={1}
+              onDragEnd={(e, { offset, velocity }) => {
+                const swipe = swipePower(offset.x, velocity.x);
+
+                if (swipe < -swipeConfidenceThreshold) {
+                  paginate(1);
+                } else if (swipe > swipeConfidenceThreshold) {
+                  paginate(-1);
+                }
+              }}
+            >
+              <Track track={tracks[trackIndex]} />
+            </motion.div>
+          </AnimatePresence>
+
+          {/* Left Arrow */}
+          <div
+            className='absolute text-6xl bg-slate-900 rounded-full size-8 left-0 flex items-center justify-center'
+            onClick={() => paginate(-1)}
+          >
+            <FaArrowLeft size={16} />
+          </div>
+
+          {/* Right Arrow */}
+          <div
+            className='absolute text-6xl bg-slate-900 rounded-full size-8 right-0 flex items-center justify-center'
+            onClick={() => paginate(1)}
+          >
+            <FaArrowRight size={16} />
+          </div>
+        </motion.div>
+
+        {/* Track pagination indicator */}
+        <motion.div
+          layout
+          key={track}
+          className='relative self-center flex items-center gap-2 justify-center'
+        >
+          {tracks.map((_, i) => (
+            <motion.div
+              key={i}
+              className='
+              bg-slate-500 size-4 rounded-full
+              '
+            />
+          ))}
+          {/* Current index indicator */}
+          <motion.div
+            layoutId='selected'
+            style={{ left: `${(24 * trackIndex) % 120}px` }}
+            className={`
+            size-4 rounded-full bg-pink-500 absolute top-0 bottom-0 left-0`}
+          />
         </motion.div>
       </motion.div>
     </motion.div>
