@@ -105,17 +105,14 @@ const About = () => {
               impactful digital experiences.
             </span>
           </motion.p>
+          {/* Divider */}
+          <motion.div className='mt-1 flex gap-1 w-full items-center'>
+            <div className='bg-slate-600/75 flex-1 h-px' />
+            <div className='bg-slate-600 size-1 rounded-full' />
+            <div className='bg-slate-600/75 flex-1 h-px' />
+          </motion.div>
         </motion.div>
 
-        {/* Divider */}
-        <motion.div
-          variants={childVariants}
-          className='flex gap-1 w-full items-center'
-        >
-          <div className='bg-slate-600/75 flex-1 h-px' />
-          <div className='bg-slate-600 size-1 rounded-full' />
-          <div className='bg-slate-600/75 flex-1 h-px' />
-        </motion.div>
         {/* Work experience */}
         <motion.div
           variants={childVariants}
@@ -163,20 +160,17 @@ const About = () => {
               it.
             </li>
           </motion.ul>
-        </motion.div>
-        {/* Divider */}
-        <motion.div
-          variants={childVariants}
-          className='flex gap-1 w-full items-center'
-        >
-          <div className='bg-slate-600/75 flex-1 h-px' />
-          <div className='bg-slate-600 size-1 rounded-full' />
-          <div className='bg-slate-600/75 flex-1 h-px' />
+          {/* Divider */}
+          <motion.div className='flex gap-1 w-full items-center'>
+            <div className='bg-slate-600/75 flex-1 h-px' />
+            <div className='bg-slate-600 size-1 rounded-full' />
+            <div className='bg-slate-600/75 flex-1 h-px' />
+          </motion.div>
         </motion.div>
 
         {/* College and courses */}
         {/* SCE */}
-        <motion.div variants={childVariants}>
+        <motion.div variants={childVariants} className='w-full'>
           <motion.div className='text-slate-50 w-full'>
             <motion.h1 className='font-medium'>
               BSc in Software Engineering
