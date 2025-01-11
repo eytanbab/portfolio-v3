@@ -119,7 +119,7 @@ const Intro = ({ introRef, setActive }) => {
           >
             <FaGithub
               size={24}
-              className='fill-slate-fill-300 hover:fill-pink-500 transition-colors duration-300 ease-in-out'
+              className='fill-slate-300 hover:fill-pink-500 transition-colors duration-300 ease-in-out'
             />
           </motion.a>
           <motion.a
