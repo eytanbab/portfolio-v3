@@ -73,10 +73,9 @@ const About = ({ aboutRef, setActive }) => {
         <motion.div variants={aboutParentVariants}>
           <motion.div variants={childVariants}>
             <motion.p className='font-light text-slate-300'>
-              Hi, I’m <span className='font-medium text-slate-50'>Ethan -</span>{' '}
-              a{' '}
+              Hi, I’m <span className='font-medium text-slate-50'>Ethan</span> -{' '}
               <span className='font-medium text-slate-50'>
-                Fullstack developer
+                a Fullstack developer
               </span>{' '}
               with a{' '}
               <span className='font-medium text-slate-50'>
@@ -84,48 +83,43 @@ const About = ({ aboutRef, setActive }) => {
               </span>{' '}
             </motion.p>
             <motion.p className='font-light text-slate-300'>
-              I’ve been building{' '}
+              I build{' '}
               <span className='font-medium text-slate-50'>
                 user-friendly web applications
               </span>{' '}
-              with tools like{' '}
+              starting from{' '}
               <span className='font-medium text-slate-50'>
-                React, Next.js, and TypeScript,
+                UX/UI design in Figma,
               </span>{' '}
-              creating projects like a{' '}
+              to development with{' '}
               <span className='font-medium text-slate-50'>
-                financial tracker, markdown editor
-              </span>{' '}
-              and a{' '}
-              <span className='font-medium text-slate-50'>
-                job application tracker
-              </span>{' '}
-              from scratch.
+                Typescript, React, and Next.js.
+              </span>
             </motion.p>
+
             <motion.p className='font-light text-slate-300'>
-              I’m also exploring{' '}
-              <span className='font-medium text-slate-50'>UX/UI design,</span>{' '}
-              with recent work including a{' '}
-              <span className='font-medium text-slate-50'>
-                Spotify remake in Figma.
-              </span>{' '}
-            </motion.p>
-            <motion.p className='font-light text-slate-300'>
-              In addition to my technical skills, I’ve been{' '}
+              I have been also passionate about{' '}
+              <span className='font-medium text-slate-50'>music</span> for as
+              long as I can remember, and I’ve been{' '}
               <span className='font-medium text-slate-50'>producing music</span>{' '}
               for the past{' '}
-              <span className='font-medium text-slate-50'>12 years.</span>{' '}
+              <span className='font-medium text-slate-50'>12 years.</span>
             </motion.p>
+
             <motion.p className='font-light text-slate-300'>
               I’m currently{' '}
               <span className='font-medium text-slate-50'>
                 looking for a job
               </span>{' '}
-              where I can apply my skills and passion to create{' '}
+              where I can apply my{' '}
+              <span className='font-medium text-slate-50'>skills </span> and{' '}
+              <span className='font-medium text-slate-50'>passion</span> to
+              create{' '}
               <span className='font-medium text-slate-50'>
                 impactful digital experiences.
               </span>
             </motion.p>
+
             {/* Divider */}
             <motion.div className='mt-1 flex gap-1 w-full items-center'>
               <div className='bg-slate-600/75 flex-1 h-px' />
