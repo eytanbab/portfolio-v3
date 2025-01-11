@@ -73,3 +73,26 @@ export const data: projectProps[] = [
   //   repo: 'https://github.com/eytanbab/react/tree/master/tip-calculator-app',
   // },
 ];
+
+export const tracks = [
+  {
+    trackName: '7Wells - Voices',
+    link: 'https://www.youtube.com/embed/iS_Y5EzirdA?si=6VleCHd3tJdcFqC5?ecver=2&enablejsapi=1',
+  },
+  {
+    trackName: '7Wells - Mi Amor ft. Alexy Large',
+    link: 'https://www.youtube.com/embed/ISbn3al-6sM?si=zA6qNDI6j8ae_4ia?ecver=2&enablejsapi=1',
+  },
+  {
+    trackName: 'Lady Gaga - Judas | 7wells Bootleg',
+    link: 'https://www.youtube.com/embed/nCKZO0q-wZw?si=HS1pBrc16tiRZS1o?ecver=2&enablejsapi=1',
+  },
+  {
+    trackName: '7Wells - Habibi',
+    link: 'https://www.youtube.com/embed/OdYlUDppAfs?si=1oQNT5bvOjo-uIsn?ecver=2&enablejsapi=1',
+  },
+  {
+    trackName: '7Wells - House of Techno',
+    link: 'https://www.youtube.com/embed/B5NAtCB4u-Q?si=0Z8Tdtfk7Ah3VCs_?ecver=2&enablejsapi=1',
+  },
+];
