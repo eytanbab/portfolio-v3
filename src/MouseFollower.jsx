@@ -2,7 +2,6 @@ import { motion } from 'motion/react';
 
 // eslint-disable-next-line react/prop-types
 const MouseFollower = ({ cursorPosition }) => {
-  console.log( cursorPosition );
   return (
     <motion.div
       className='pointer-events-none absolute z-50 mix-blend-difference'
