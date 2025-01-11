@@ -1,7 +1,7 @@
 import { motion, useInView } from 'motion/react';
 import { useRef } from 'react';
 import { AiOutlinePython } from 'react-icons/ai';
-import { DiPostgresql } from 'react-icons/di';
+import { SiPostgresql } from 'react-icons/si';
 import { FaFigma, FaGitAlt, FaReact } from 'react-icons/fa6';
 import { LiaJira } from 'react-icons/lia';
 import { RiNextjsLine, RiTailwindCssFill } from 'react-icons/ri';
@@ -36,7 +36,7 @@ const Skills = () => {
   return (
     <motion.div
       id='skills'
-      className='w-full h-screen flex flex-col items-center justify-center'
+      className='w-full flex flex-col items-center justify-center'
     >
       {/* Wrapper */}
       <motion.div
@@ -44,43 +44,43 @@ const Skills = () => {
         variants={parentVariants}
         initial='hidden'
         animate={isInView ? 'visible' : 'hidden'}
-        className='w-96 max-w-96 grid grid-cols-4 gap-12 place-items-center text-slate-50 '
+        className='w-96 max-w-96 grid grid-cols-6 gap-6 place-items-center text-slate-50 mt-8'
       >
-        <motion.div>
-          <FaReact size={40} />
+        <motion.div variants={childVariants}>
+          <FaReact size={32} />
         </motion.div>
         <motion.div variants={childVariants}>
-          <RiNextjsLine size={40} />
+          <RiNextjsLine size={32} />
         </motion.div>
         <motion.div variants={childVariants}>
-          <RiTailwindCssFill size={40} />
+          <RiTailwindCssFill size={32} />
         </motion.div>
         <motion.div variants={childVariants}>
-          <TbBrandFramerMotion size={40} />
+          <TbBrandFramerMotion size={32} />
         </motion.div>
         <motion.div variants={childVariants}>
-          <TbBrandTypescript size={40} />
+          <TbBrandTypescript size={32} />
         </motion.div>
         <motion.div variants={childVariants}>
-          <DiPostgresql size={40} />
+          <SiPostgresql size={32} />
         </motion.div>
         <motion.div variants={childVariants}>
-          <SiExpress size={40} />
+          <SiExpress size={32} />
         </motion.div>
         <motion.div variants={childVariants}>
-          <AiOutlinePython size={40} />
+          <AiOutlinePython size={32} />
         </motion.div>
         <motion.div variants={childVariants}>
-          <FaFigma size={40} />
+          <FaFigma size={32} />
         </motion.div>
         <motion.div variants={childVariants}>
-          <FaGitAlt size={40} />
+          <FaGitAlt size={32} />
         </motion.div>
         <motion.div variants={childVariants}>
-          <SiPostman size={40} />
+          <SiPostman size={32} />
         </motion.div>
         <motion.div variants={childVariants}>
-          <LiaJira size={40} />
+          <LiaJira size={32} />
         </motion.div>
       </motion.div>
     </motion.div>
