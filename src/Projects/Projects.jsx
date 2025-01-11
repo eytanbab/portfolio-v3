@@ -3,6 +3,7 @@ import { useRef } from 'react';
 import { data } from '../../data';
 import Project from './Project';
 import CTA from '../CTA';
+import Skills from '../Skills';
 
 const Projects = () => {
   const ref = useRef(null);
@@ -68,7 +69,7 @@ const Projects = () => {
         </motion.div>
 
         {/* Projects section wrapper */}
-        <motion.div variants={childVariants} className=''>
+        <motion.div variants={childVariants}>
           {/* Project */}
           <motion.div
             className='flex flex-col items-start justify-center gap-4'
@@ -79,6 +80,11 @@ const Projects = () => {
             })}
           </motion.div>
         </motion.div>
+        {/* Skills */}
+        <motion.div variants={childVariants}>
+          <Skills />
+        </motion.div>
+
         <motion.div variants={childVariants} className='mt-8 w-full'>
           <CTA scrollToElement='music'>music</CTA>
         </motion.div>

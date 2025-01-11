@@ -12,7 +12,6 @@ const Content = () => {
       <Scrollbar />
       <Intro />
       <About />
-      <Skills />
       <Projects />
       <Music />
     </motion.div>
