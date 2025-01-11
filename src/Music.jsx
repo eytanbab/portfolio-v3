@@ -161,15 +161,15 @@ const Music = () => {
                 {tracks.map((_, i) => (
                   <motion.div
                     key={i}
-                    className='bg-slate-500 size-4 rounded-full'
+                    className='bg-slate-500 size-2 rounded-full'
                   />
                 ))}
                 {/* Current index indicator */}
                 <motion.div
                   layoutId='selected'
-                  style={{ left: `${(24 * trackIndex) % 120}px` }}
+                  style={{ left: `${(16 * trackIndex)}px` }}
                   className={`
-                    size-4 rounded-full bg-pink-500 absolute top-0 bottom-0 left-0`}
+                    size-2 rounded-full bg-pink-500 absolute top-0 bottom-0 left-0`}
                 />
               </motion.div>
             </motion.div>
