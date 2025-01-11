@@ -1,7 +1,6 @@
 import { motion } from 'motion/react';
 import About from './About';
 import Projects from './Projects/Projects';
-import Skills from './Skills';
 import Intro from './Intro';
 import Music from './Music';
 import Scrollbar from './Scrollbar';
