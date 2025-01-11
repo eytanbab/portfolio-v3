@@ -9,7 +9,6 @@ import {
 import { tracks } from '../data';
 import Track from './Track';
 import { wrap } from 'motion';
-import { track } from 'framer-motion/client';
 
 const parentVariants = {
   hidden: { opacity: 0 },
@@ -155,7 +154,7 @@ const Music = () => {
 
               {/* Track pagination indicator */}
               <motion.div
-                key={track}
+                key={tracks}
                 className='relative self-center flex items-center gap-2 justify-center'
               >
                 {tracks.map((_, i) => (
@@ -167,7 +166,7 @@ const Music = () => {
                 {/* Current index indicator */}
                 <motion.div
                   layoutId='selected'
-                  style={{ left: `${(16 * trackIndex)}px` }}
+                  style={{ left: `${16 * trackIndex}px` }}
                   className={`
                     size-2 rounded-full bg-pink-500 absolute top-0 bottom-0 left-0`}
                 />
