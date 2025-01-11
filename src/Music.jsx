@@ -73,7 +73,6 @@ const Music = () => {
 
   const paginate = (newDirection) => {
     setPage([page + newDirection, newDirection]);
-    console.log(`${(24 * page) % 120}px`);
   };
 
   return (
@@ -130,7 +129,7 @@ const Music = () => {
           >
             <FaSoundcloud
               size={40}
-              className='fill-slate-300 hover:fill-orange-500 transition-colors duration-300 ease-in-out'
+              className='fill-slate-300 hover:fill-[#FF6300] transition-colors duration-300 ease-in-out'
             />
           </motion.a>
           <motion.a
@@ -141,82 +140,92 @@ const Music = () => {
           >
             <FaYoutube
               size={40}
-              className='fill-slate-300 hover:fill-red-500 transition-colors duration-300 ease-in-out'
+              className='fill-slate-300 hover:fill-[#FF0033] transition-colors duration-300 ease-in-out'
             />
           </motion.a>
         </motion.div>
 
         {/* Tracks carousel */}
-        <motion.div className='w-full relative h-[214px] flex items-center justify-center'>
+        <motion.div
+          variants={childVariants}
+          className='w-full relative h-[196px] flex items-center justify-center'
+        >
           <AnimatePresence initial={false} custom={direction}>
-            <motion.div
-              className='absolute w-72'
-              key={tracks[trackIndex]}
-              src={tracks[trackIndex]}
-              custom={direction}
-              variants={variants}
-              initial='enter'
-              animate='center'
-              exit='exit'
-              transition={{
-                x: { type: 'spring', stiffness: 300, damping: 30 },
-                opacity: { duration: 0.2 },
-              }}
-              drag='x'
-              dragConstraints={{ left: 0, right: 0 }}
-              dragElastic={1}
-              onDragEnd={(e, { offset, velocity }) => {
-                const swipe = swipePower(offset.x, velocity.x);
+            <motion.div className='absolute w-72 flex items-center flex-col'>
+              <motion.div
+                key={tracks[trackIndex]}
+                custom={direction}
+                variants={variants}
+                initial='enter'
+                animate='center'
+                exit='exit'
+                transition={{
+                  x: { type: 'spring', stiffness: 300, damping: 30 },
+                  opacity: { duration: 0.2 },
+                }}
+                drag='x'
+                dragConstraints={{ left: 0, right: 0 }}
+                dragElastic={1}
+                onDragEnd={(e, { offset, velocity }) => {
+                  const swipe = swipePower(offset.x, velocity.x);
 
-                if (swipe < -swipeConfidenceThreshold) {
-                  paginate(1);
-                } else if (swipe > swipeConfidenceThreshold) {
-                  paginate(-1);
-                }
-              }}
-            >
-              <Track track={tracks[trackIndex]} />
+                  if (swipe < -swipeConfidenceThreshold) {
+                    paginate(1);
+                  } else if (swipe > swipeConfidenceThreshold) {
+                    paginate(-1);
+                  }
+                }}
+              >
+                <Track track={tracks[trackIndex]} />
+              </motion.div>
+
+              {/* Track pagination indicator */}
+              <motion.div
+                key={track}
+                className='relative self-center flex items-center gap-2 justify-center'
+              >
+                {tracks.map((_, i) => (
+                  <motion.div
+                    key={i}
+                    className='bg-slate-500 size-4 rounded-full'
+                  />
+                ))}
+                {/* Current index indicator */}
+                <motion.div
+                  layoutId='selected'
+                  style={{ left: `${(24 * trackIndex) % 120}px` }}
+                  className={`
+                    size-4 rounded-full bg-pink-500 absolute top-0 bottom-0 left-0`}
+                />
+              </motion.div>
             </motion.div>
           </AnimatePresence>
 
           {/* Left Arrow */}
-          <div
-            className='absolute text-6xl bg-slate-900 rounded-full size-8 left-0 flex items-center justify-center'
+          <motion.div
+            whileHover={{
+              scale: 1.1,
+              transition: { duration: 0.3, ease: 'easeInOut' },
+            }}
+            whileTap={{ scale: 0.9 }}
+            className='absolute text-6xl bg-slate-800 rounded-full size-8 left-0 flex items-center justify-center hover:cursor-pointer hover:bg-pink-500 transition-colors duration-300 ease-in-out'
             onClick={() => paginate(-1)}
           >
             <FaArrowLeft size={16} />
-          </div>
+          </motion.div>
 
           {/* Right Arrow */}
-          <div
-            className='absolute text-6xl bg-slate-900 rounded-full size-8 right-0 flex items-center justify-center'
+          <motion.div
+            whileHover={{
+              scale: 1.1,
+              transition: { duration: 0.3, ease: 'easeInOut' },
+            }}
+            whileTap={{ scale: 0.9 }}
+            className='absolute text-6xl bg-slate-800 rounded-full size-8 right-0 flex items-center justify-center hover:cursor-pointer hover:bg-pink-500 transition-colors duration-300 ease-in-out'
             onClick={() => paginate(1)}
           >
             <FaArrowRight size={16} />
-          </div>
-        </motion.div>
-
-        {/* Track pagination indicator */}
-        <motion.div
-          layout
-          key={track}
-          className='relative self-center flex items-center gap-2 justify-center'
-        >
-          {tracks.map((_, i) => (
-            <motion.div
-              key={i}
-              className='
-              bg-slate-500 size-4 rounded-full
-              '
-            />
-          ))}
-          {/* Current index indicator */}
-          <motion.div
-            layoutId='selected'
-            style={{ left: `${(24 * trackIndex) % 120}px` }}
-            className={`
-            size-4 rounded-full bg-pink-500 absolute top-0 bottom-0 left-0`}
-          />
+          </motion.div>
         </motion.div>
       </motion.div>
     </motion.div>
