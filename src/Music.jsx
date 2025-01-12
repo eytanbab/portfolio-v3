@@ -1,5 +1,5 @@
 import { AnimatePresence, motion, useInView } from 'motion/react';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
   FaArrowLeft,
   FaArrowRight,
