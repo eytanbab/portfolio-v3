@@ -7,7 +7,7 @@ export type projectProps = {
   repo: string;
 };
 
-export const data: projectProps[] = [
+export const projects: projectProps[] = [
   {
     projectName: 'Markdown Editor',
     projectDesc:

@@ -1,5 +1,5 @@
 import { motion, useInView } from 'motion/react';
-import { data } from '../../data';
+import { projects } from '../../data';
 import Project from './Project';
 import CTA from '../CTA';
 import Skills from '../Skills';
@@ -80,7 +80,7 @@ const Projects = ({ projectsRef, setActive }) => {
             className='flex flex-col items-start justify-center gap-4'
             variants={projectParentVariants}
           >
-            {data.map((project) => {
+            {projects.map((project) => {
               return <Project key={project.link} project={project} />;
             })}
           </motion.div>
