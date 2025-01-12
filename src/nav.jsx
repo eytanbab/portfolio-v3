@@ -21,28 +21,28 @@ const Nav = ({ active }) => {
           opacity: 1,
         }}
       />
-      <div className='z-20 text-slate-300 flex gap-16'>
+      <div className='z-20 text-slate-300 flex gap-16 font-light'>
         <a
           onClick={() => handleClickScroll('about')}
           className={`${
-            active === 'about' ? 'text-slate-50 font-semibold' : ''
-          } cursor-pointer transition-colors duration-300 ease-in-out`}
+            active === 'about' ? 'text-slate-50 font-semibold scale-105' : ''
+          } cursor-pointer transition-all duration-300 ease-in-out`}
         >
           About
         </a>
         <a
           onClick={() => handleClickScroll('projects')}
           className={`${
-            active === 'projects' ? 'text-slate-50 font-semibold' : ''
-          } cursor-pointer transition-colors duration-300 ease-in-out`}
+            active === 'projects' ? 'text-slate-50 font-semibold scale-105' : ''
+          } cursor-pointer transition-all duration-300 ease-in-out`}
         >
           Projects
         </a>
         <a
           onClick={() => handleClickScroll('music')}
           className={`${
-            active === 'music' ? 'text-slate-50 font-semibold' : ''
-          } cursor-pointer transition-colors duration-300 ease-in-out`}
+            active === 'music' ? 'text-slate-50 font-semibold scale-105' : ''
+          } cursor-pointer transition-all duration-300 ease-in-out`}
         >
           Music
         </a>
