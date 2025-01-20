@@ -30,7 +30,7 @@ const Intro = ({ introRef, setActive }) => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 1,
+        staggerChildren: 0.5,
         duration: 0.5,
         ease: 'easeInOut',
       },
