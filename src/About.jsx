@@ -1,5 +1,5 @@
-import { AnimatePresence, motion, useInView } from 'motion/react';
-import { useEffect, useState } from 'react';
+import { motion, useInView } from 'motion/react';
+import { useEffect } from 'react';
 import CTA from './CTA';
 
 // eslint-disable-next-line react/prop-types
@@ -10,8 +10,6 @@ const About = ({ aboutRef, setActive }) => {
   useEffect(() => {
     activeInView ? setActive('about') : null;
   }, [activeInView, setActive]);
-
-  const [expand, setExpand] = useState(false);
 
   const parentVariants = {
     hidden: { opacity: 0 },
@@ -46,20 +44,6 @@ const About = ({ aboutRef, setActive }) => {
     },
   };
 
-  const ulVariants = {
-    hidden: { opacity: 0, y: 5 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.5, ease: 'easeInOut' },
-    },
-    exit: {
-      opacity: 0,
-      y: -5,
-      transition: { duration: 0.5, ease: 'easeInOut' },
-    },
-  };
-
   return (
     <motion.div
       id='about'
@@ -85,55 +69,51 @@ const About = ({ aboutRef, setActive }) => {
             className='absolute bottom-0.5 w-full h-px rounded-full bg-pink-500'
           />
         </motion.div>
-        {/* About me section */}
+        {/* About Me Section */}
         <motion.div variants={aboutParentVariants}>
           <motion.div variants={childVariants}>
             <motion.p className='font-light text-slate-300'>
-              Hi, I’m <span className='font-medium text-slate-50'>Ethan</span> -{' '}
+              Hi, I’m <span className='font-medium text-slate-50'>Ethan</span>,
+              a
               <span className='font-medium text-slate-50'>
-                a Fullstack developer
+                {' '}
+                Fullstack Developer
               </span>{' '}
-              with a{' '}
+              with a
               <span className='font-medium text-slate-50'>
-                BSc in Software Engineering.
-              </span>{' '}
-            </motion.p>
-            <motion.p className='font-light text-slate-300'>
-              I build{' '}
-              <span className='font-medium text-slate-50'>
-                user-friendly web applications
-              </span>{' '}
-              starting from{' '}
-              <span className='font-medium text-slate-50'>
-                UX/UI design in Figma,
-              </span>{' '}
-              to development with{' '}
-              <span className='font-medium text-slate-50'>
-                Typescript, React, and Next.js.
+                {' '}
+                BSc in Software Engineering
               </span>
+              .
             </motion.p>
-
             <motion.p className='font-light text-slate-300'>
-              I have been also passionate about{' '}
-              <span className='font-medium text-slate-50'>music</span> for as
-              long as I can remember, and I’ve been{' '}
-              <span className='font-medium text-slate-50'>producing music</span>{' '}
-              for the past{' '}
-              <span className='font-medium text-slate-50'>12 years.</span>
-            </motion.p>
-
-            <motion.p className='font-light text-slate-300'>
-              I’m currently{' '}
+              I create{' '}
+              <span className='font-medium text-slate-50'>web apps</span> using{' '}
               <span className='font-medium text-slate-50'>
-                looking for a job
+                TypeScript, React, and Next.js
+              </span>{' '}
+              for the frontend, and{' '}
+              <span className='font-medium text-slate-50'>
+                Express, MongoDB, Supabase, Drizzle, Neon, and PostgreSQL
+              </span>{' '}
+              for the backend.
+            </motion.p>
+
+            <motion.p className='font-light text-slate-300'>
+              Outside of tech, I’ve been into{' '}
+              <span className='font-medium text-slate-50'>
+                music production
+              </span>{' '}
+              for <span className='font-medium text-slate-50'>12 years</span>.
+            </motion.p>
+            <motion.p className='font-light text-slate-300'>
+              I’m{' '}
+              <span className='font-medium text-slate-50'>
+                looking for a role
               </span>{' '}
               where I can apply my{' '}
-              <span className='font-medium text-slate-50'>skills </span> and{' '}
-              <span className='font-medium text-slate-50'>passion</span> to
-              create{' '}
-              <span className='font-medium text-slate-50'>
-                impactful digital experiences.
-              </span>
+              <span className='font-medium text-slate-50'>skills</span> to build{' '}
+              <span className='font-medium text-slate-50'>great products</span>.
             </motion.p>
 
             {/* Divider */}
@@ -144,88 +124,45 @@ const About = ({ aboutRef, setActive }) => {
             </motion.div>
           </motion.div>
 
-          {/* Work experience */}
+          {/* Work Experience */}
           <motion.div
             variants={childVariants}
             key='button'
             className='flex flex-col items-start gap-1 w-full'
           >
-            {/* Job title */}
             <motion.div className='text-slate-50 w-full'>
               <motion.h1 className='font-medium'>
                 LLM Code Refactoring Engineer
               </motion.h1>
-              <motion.div className='flex justify-between w-full'>
+              <motion.div className='flex justify-between w-full text-slate-300'>
                 <p className='text-sm'>MLG International</p>
-                <p className='text-xs font-light '>Apr. 2024 - current</p>
+                <p className='text-xs font-light'>Apr 2024 - Current</p>
               </motion.div>
             </motion.div>
+            <motion.ul className='text-sm space-y-1 text-slate-200'>
+              <li className='ml-4 list-disc'>
+                <span className='text-slate-50 font-medium'>Reviewed</span> and
+                <span className='text-slate-50 font-medium'>
+                  {' '}
+                  optimized code
+                </span>{' '}
+                generated by LLMs in
+                <span className='text-slate-50 font-medium'>
+                  {' '}
+                  Python, JavaScript, and React
+                </span>
+                .
+              </li>
+              <li className='ml-4 list-disc'>
+                <span className='text-slate-50 font-medium'>Debugged</span> and
+                <span className='text-slate-50 font-medium'>
+                  {' '}
+                  ensured functionality
+                </span>{' '}
+                across multiple frameworks.
+              </li>
+            </motion.ul>
 
-            {/* Job description */}
-            <AnimatePresence mode='wait'>
-              {!expand ? (
-                <motion.button
-                  initial={{ opacity: [0, 1] }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  key='expand'
-                  className='text-sm text-slate-300'
-                  onClick={() => setExpand((prev) => !prev)}
-                >
-                  read more...
-                </motion.button>
-              ) : (
-                <motion.ul
-                  variants={ulVariants}
-                  initial='hidden'
-                  animate='visible'
-                  exit='exit'
-                  className='text-sm space-y-1 text-slate-200'
-                >
-                  <li className='ml-4 list-disc font-light'>
-                    <span className='text-slate-50 font-medium'>Review</span>{' '}
-                    and{' '}
-                    <span className='text-slate-50 font-medium'>
-                      correct code generated by LLMs
-                    </span>{' '}
-                    across multiple <span></span>
-                    <span className='text-slate-50 font-medium'>
-                      programming languages and frameworks,
-                    </span>{' '}
-                    including{' '}
-                    <span className='text-slate-50 font-medium'>
-                      Python, JavaScript, React,
-                    </span>{' '}
-                    and more.
-                  </li>
-                  <li className='ml-4 list-disc'>
-                    <span className='text-slate-50 font-medium'>Ensure</span>{' '}
-                    the
-                    <span className='text-slate-50 font-medium'>
-                      {' '}
-                      accuracy, efficiency, and functionality
-                    </span>{' '}
-                    of{' '}
-                    <span className='text-slate-50 font-medium'>
-                      LLM generated code
-                    </span>{' '}
-                    by{' '}
-                    <span className='text-slate-50 font-medium'>debugging</span>{' '}
-                    and{' '}
-                    <span className='text-slate-50 font-medium'>
-                      optimizing
-                    </span>{' '}
-                    it.
-                  </li>
-                  <motion.button
-                    className='text-sm'
-                    onClick={() => setExpand((prev) => !prev)}
-                  >
-                    read less
-                  </motion.button>
-                </motion.ul>
-              )}
-            </AnimatePresence>
             {/* Divider */}
             <motion.div className='flex gap-1 w-full items-center'>
               <div className='bg-slate-600/75 flex-1 h-px' />
@@ -234,14 +171,13 @@ const About = ({ aboutRef, setActive }) => {
             </motion.div>
           </motion.div>
 
-          {/* College and courses */}
-          {/* SCE */}
+          {/* Education */}
           <motion.div variants={childVariants} className='w-full mt-1'>
             <motion.div className='text-slate-50 w-full'>
               <motion.h1 className='font-medium'>
                 BSc in Software Engineering
               </motion.h1>
-              <motion.div className='flex justify-between w-full'>
+              <motion.div className='flex justify-between w-full text-slate-300'>
                 <p className='text-xs'>
                   SCE - Sami Shamoon College of Engineering
                 </p>
