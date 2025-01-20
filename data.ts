@@ -11,7 +11,7 @@ export const projects: projectProps[] = [
   {
     projectName: 'Markdown Editor',
     projectDesc:
-      'Write and manage your markdown notes effortlessly with our editor web app. Save, edit, and organize entries with real-time updates and user authentication. Start creating now!',
+      'Create and manage markdown notes with ease. You can save, edit, and organize your notes, and favorite your most important entries for quick access.',
     techUsed: ['React', 'Tailwind CSS', 'Supabase'],
     projectImagePath: '/mobile_images/markdown_editor.png',
     link: 'https://7wells-markdown-editor.netlify.app/',
@@ -20,7 +20,7 @@ export const projects: projectProps[] = [
   {
     projectName: 'Finance Tracker',
     projectDesc:
-      'Stay on top of your finances with our intuitive finance tracker app. Monitor and manage your income and expenses effortlessly with customizable charts, secure bank connections, and powerful features.',
+      'Manage and visualize your finances with interactive charts and detailed transaction tracking. Save, edit, and filter transactions with ease, and customize your settings for a personalized experience.',
     techUsed: ['Nextjs', 'Tailwind CSS', 'Hono', 'PostreSQL'],
     projectImagePath: '/mobile_images/finance_mobile.png',
     link: 'https://finance-tracker-eight-indol.vercel.app/',
@@ -29,7 +29,7 @@ export const projects: projectProps[] = [
   {
     projectName: 'Defino',
     projectDesc:
-      'Find word meanings quickly with our easy-to-use dictionary web app. Access millions of words and definitions, stay up-to-date with the latest language trends, and start exploring now!',
+      'Look up word meanings fast and explore a wide range of definitions. Find new words and expand your vocabulary with ease.',
     techUsed: ['React', 'Tailwind CSS', 'Dictionary API'],
     projectImagePath: '/mobile_images/defino_mobile.png',
     link: 'https://dict-web-app.netlify.app/',
@@ -47,7 +47,7 @@ export const projects: projectProps[] = [
   {
     projectName: 'Shortly',
     projectDesc:
-      'Introducing our URL shortener - the perfect tool for simplifying and streamlining your online presence! With our app, you can quickly and easily generate shortened links that are easy to remember and share.',
+      'Create short, easy-to-share links in seconds. Simplify your online sharing with a quick URL shortener.',
     techUsed: ['React', 'Tailwind CSS', 'shrtco.de API'],
     projectImagePath: '/mobile_images/shortly_mobile.png',
     link: 'https://url-shortener-2.netlify.app/',
