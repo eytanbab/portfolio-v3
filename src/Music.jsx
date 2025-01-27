@@ -1,14 +1,21 @@
-import { AnimatePresence, motion, useInView } from 'motion/react';
-import { useEffect, useState } from 'react';
 import {
-  FaArrowLeft,
-  FaArrowRight,
+  // AnimatePresence,
+  motion,
+  useInView,
+} from 'motion/react';
+import {
+  useEffect,
+  // useState
+} from 'react';
+import {
+  // FaArrowLeft,
+  // FaArrowRight,
   FaSoundcloud,
   FaYoutube,
 } from 'react-icons/fa';
-import { tracks } from '../data';
-import Track from './Track';
-import { wrap } from 'motion';
+// import { tracks } from '../data';
+// import Track from './Track';
+// import { wrap } from 'motion';
 
 const parentVariants = {
   hidden: { opacity: 0 },
@@ -31,26 +38,26 @@ const childVariants = {
   },
 };
 
-const variants = {
-  enter: (direction) => {
-    return {
-      x: direction > 0 ? 1000 : -1000,
-      opacity: 0,
-    };
-  },
-  center: {
-    zIndex: 1,
-    x: 0,
-    opacity: 1,
-  },
-  exit: (direction) => {
-    return {
-      zIndex: 0,
-      x: direction < 0 ? 1000 : -1000,
-      opacity: 0,
-    };
-  },
-};
+// const variants = {
+//   enter: (direction) => {
+//     return {
+//       x: direction > 0 ? 1000 : -1000,
+//       opacity: 0,
+//     };
+//   },
+//   center: {
+//     zIndex: 1,
+//     x: 0,
+//     opacity: 1,
+//   },
+//   exit: (direction) => {
+//     return {
+//       zIndex: 0,
+//       x: direction < 0 ? 1000 : -1000,
+//       opacity: 0,
+//     };
+//   },
+// };
 
 /**
  * Experimenting with distilling swipe offset and velocity into a single variable, so the
@@ -58,22 +65,22 @@ const variants = {
  * Should accomodate longer swipes and short flicks without having binary checks on
  * just distance thresholds and velocity > 0.
  */
-const swipeConfidenceThreshold = 10000;
-const swipePower = (offset, velocity) => {
-  return Math.abs(offset) * velocity;
-};
+// const swipeConfidenceThreshold = 10000;
+// const swipePower = (offset, velocity) => {
+//   return Math.abs(offset) * velocity;
+// };
 
 // eslint-disable-next-line react/prop-types
 const Music = ({ musicRef, setActive }) => {
   const activeInView = useInView(musicRef);
   const isInView = useInView(musicRef, { once: true });
-  const [[page, direction], setPage] = useState([0, 0]);
+  // const [[page, direction], setPage] = useState([0, 0]);
 
-  const trackIndex = wrap(0, tracks.length, page);
+  // const trackIndex = wrap(0, tracks.length, page);
 
-  const paginate = (newDirection) => {
-    setPage([page + newDirection, newDirection]);
-  };
+  // const paginate = (newDirection) => {
+  //   setPage([page + newDirection, newDirection]);
+  // };
 
   useEffect(() => {
     activeInView ? setActive('music') : null;
@@ -124,11 +131,11 @@ const Music = ({ musicRef, setActive }) => {
         </motion.p>
 
         {/* Tracks carousel */}
-        <motion.div
+        {/* <motion.div
           variants={childVariants}
           className='w-full relative h-[196px] flex items-center justify-center'
-        >
-          <AnimatePresence initial={false} custom={direction}>
+        > */}
+        {/* <AnimatePresence initial={false} custom={direction}>
             <motion.div className='absolute w-72 flex items-center flex-col'>
               <motion.div
                 key={tracks[trackIndex]}
@@ -155,10 +162,10 @@ const Music = ({ musicRef, setActive }) => {
                 }}
               >
                 <Track track={tracks[trackIndex]} />
-              </motion.div>
+              </motion.div> */}
 
-              {/* Track pagination indicator */}
-              <motion.div
+        {/* Track pagination indicator */}
+        {/* <motion.div
                 key={tracks}
                 className='relative self-center flex items-center gap-2 justify-center'
               >
@@ -167,9 +174,9 @@ const Music = ({ musicRef, setActive }) => {
                     key={i}
                     className='bg-slate-500 size-2 rounded-full'
                   />
-                ))}
-                {/* Current index indicator */}
-                <motion.div
+                ))} */}
+        {/* Current index indicator */}
+        {/* <motion.div
                   layoutId='selected'
                   style={{ left: `${16 * trackIndex}px` }}
                   className={`
@@ -177,10 +184,10 @@ const Music = ({ musicRef, setActive }) => {
                 />
               </motion.div>
             </motion.div>
-          </AnimatePresence>
+          </AnimatePresence> */}
 
-          {/* Left Arrow */}
-          <motion.div
+        {/* Left Arrow */}
+        {/* <motion.div
             whileHover={{
               scale: 1.1,
               transition: { duration: 0.3, ease: 'easeInOut' },
@@ -190,10 +197,10 @@ const Music = ({ musicRef, setActive }) => {
             onClick={() => paginate(-1)}
           >
             <FaArrowLeft size={16} />
-          </motion.div>
+          </motion.div> */}
 
-          {/* Right Arrow */}
-          <motion.div
+        {/* Right Arrow */}
+        {/* <motion.div
             whileHover={{
               scale: 1.1,
               transition: { duration: 0.3, ease: 'easeInOut' },
@@ -204,7 +211,7 @@ const Music = ({ musicRef, setActive }) => {
           >
             <FaArrowRight size={16} />
           </motion.div>
-        </motion.div>
+        </motion.div> */}
 
         {/* Links*/}
         <motion.div
@@ -214,23 +221,23 @@ const Music = ({ musicRef, setActive }) => {
           <motion.a
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            href='https://soundcloud.com/7wells'
-            target='_blank'
-          >
-            <FaSoundcloud
-              size={40}
-              className='fill-slate-300 hover:fill-[#FF6300] transition-colors duration-300 ease-in-out'
-            />
-          </motion.a>
-          <motion.a
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
             href='https://youtube.com/@7wells323?si=zMIny7W6_Lss3ZbA'
             target='_blank'
           >
             <FaYoutube
               size={40}
               className='fill-slate-300 hover:fill-[#FF0033] transition-colors duration-300 ease-in-out'
+            />
+          </motion.a>
+          <motion.a
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            href='https://soundcloud.com/7wells'
+            target='_blank'
+          >
+            <FaSoundcloud
+              size={40}
+              className='fill-slate-300 hover:fill-[#FF6300] transition-colors duration-300 ease-in-out'
             />
           </motion.a>
         </motion.div>
