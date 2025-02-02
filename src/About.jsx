@@ -117,7 +117,7 @@ const About = ({ aboutRef, setActive }) => {
             </motion.p>
 
             {/* Divider */}
-            <motion.div className='mt-1 flex gap-1 w-full items-center'>
+            <motion.div className='my-1 flex gap-1 w-full items-center'>
               <div className='bg-slate-600/75 flex-1 h-px' />
               <div className='bg-slate-600 size-1 rounded-full' />
               <div className='bg-slate-600/75 flex-1 h-px' />
