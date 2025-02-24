@@ -44,43 +44,91 @@ const Skills = () => {
         variants={parentVariants}
         initial='hidden'
         animate={isInView ? 'visible' : 'hidden'}
-        className='w-96 max-w-96 grid grid-cols-6 gap-6 place-items-center text-slate-50 mt-8'
+        className='w-96 max-w-96 grid grid-cols-4 gap-4 place-items-center text-slate-50 mt-8'
       >
-        <motion.div variants={childVariants}>
+        <motion.div
+          variants={childVariants}
+          className='flex flex-col gap-1 items-center'
+        >
           <FaReact size={32} />
+          <span className='text-sm'>React</span>
         </motion.div>
-        <motion.div variants={childVariants}>
+        <motion.div
+          className='flex flex-col gap-1 items-center'
+          variants={childVariants}
+        >
           <RiNextjsLine size={32} />
+          <span className='text-sm'>Next.js</span>
         </motion.div>
-        <motion.div variants={childVariants}>
+        <motion.div
+          className='flex flex-col gap-1 items-center'
+          variants={childVariants}
+        >
           <RiTailwindCssFill size={32} />
+          <span className='text-sm'>Tailwind</span>
         </motion.div>
-        <motion.div variants={childVariants}>
+        <motion.div
+          className='flex flex-col gap-1 items-center'
+          variants={childVariants}
+        >
           <TbBrandFramerMotion size={32} />
+          <span className='text-sm'>Framer</span>
         </motion.div>
-        <motion.div variants={childVariants}>
+        <motion.div
+          className='flex flex-col gap-1 items-center'
+          variants={childVariants}
+        >
           <TbBrandTypescript size={32} />
+          <span className='text-sm'>Typescript</span>
         </motion.div>
-        <motion.div variants={childVariants}>
+        <motion.div
+          className='flex flex-col gap-1 items-center'
+          variants={childVariants}
+        >
           <SiPostgresql size={32} />
+          <span className='text-sm'>PostgreSQL</span>
         </motion.div>
-        <motion.div variants={childVariants}>
+        <motion.div
+          className='flex flex-col gap-1 items-center'
+          variants={childVariants}
+        >
           <SiExpress size={32} />
+          <span className='text-sm'>Express</span>
         </motion.div>
-        <motion.div variants={childVariants}>
+        <motion.div
+          className='flex flex-col gap-1 items-center'
+          variants={childVariants}
+        >
           <AiOutlinePython size={32} />
+          <span className='text-sm'>Python</span>
         </motion.div>
-        <motion.div variants={childVariants}>
+        <motion.div
+          className='flex flex-col gap-1 items-center'
+          variants={childVariants}
+        >
           <FaFigma size={32} />
+          <span className='text-sm'>Figma</span>
         </motion.div>
-        <motion.div variants={childVariants}>
+        <motion.div
+          className='flex flex-col gap-1 items-center'
+          variants={childVariants}
+        >
           <FaGitAlt size={32} />
+          <span className='text-sm'>Git</span>
         </motion.div>
-        <motion.div variants={childVariants}>
+        <motion.div
+          className='flex flex-col gap-1 items-center'
+          variants={childVariants}
+        >
           <SiPostman size={32} />
+          <span className='text-sm'>Postman</span>
         </motion.div>
-        <motion.div variants={childVariants}>
+        <motion.div
+          className='flex flex-col gap-1 items-center'
+          variants={childVariants}
+        >
           <LiaJira size={32} />
+          <span className='text-sm'>Jira</span>
         </motion.div>
       </motion.div>
     </motion.div>
