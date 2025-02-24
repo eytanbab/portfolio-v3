@@ -131,7 +131,9 @@ const About = ({ aboutRef, setActive }) => {
             className='flex flex-col items-start gap-1 w-full'
           >
             <motion.div className='text-slate-50 w-full'>
-              <motion.h1 className='font-medium'>RLHF Fullstack Developer</motion.h1>
+              <motion.h1 className='font-medium'>
+                AI Training Engineer - Fullstack
+              </motion.h1>
               <motion.div className='flex justify-between w-full text-slate-300'>
                 <p className='text-sm'>MLG International</p>
                 <p className='text-xs font-light'>Apr 2023 - Current</p>
