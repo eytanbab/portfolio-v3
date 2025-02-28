@@ -9,6 +9,15 @@ export type projectProps = {
 
 export const projects: projectProps[] = [
   {
+    projectName: 'Applications Tracker',
+    projectDesc:
+      'Track and manage your job applications with ease. View detailed application data, analyze trends with interactive charts, and stay organized with customizable filters and status tracking.',
+    techUsed: ['Next.js', 'Tailwind CSS', 'Drizzle', 'Neon'],
+    projectImagePath: '/mobile_images/job-application-tracker.png',
+    link: 'https://github.com/eytanbab/job-application-tracker/',
+    repo: 'https://github.com/eytanbab/job-application-tracker/',
+  },
+  {
     projectName: 'Markdown Editor',
     projectDesc:
       'Create and manage markdown notes with ease. You can save, edit, and organize your notes, and favorite your most important entries for quick access.',
@@ -26,15 +35,15 @@ export const projects: projectProps[] = [
     link: 'https://finance-tracker-eight-indol.vercel.app/',
     repo: 'https://github.com/eytanbab/finance-tracker',
   },
-  {
-    projectName: 'Defino',
-    projectDesc:
-      'Look up word meanings fast and explore a wide range of definitions. Find new words and expand your vocabulary with ease.',
-    techUsed: ['React', 'Tailwind CSS', 'Dictionary API'],
-    projectImagePath: '/mobile_images/defino_mobile.png',
-    link: 'https://dict-web-app.netlify.app/',
-    repo: 'https://github.com/eytanbab/react/tree/master/dictionary-web-app',
-  },
+  // {
+  //   projectName: 'Defino',
+  //   projectDesc:
+  //     'Look up word meanings fast and explore a wide range of definitions. Find new words and expand your vocabulary with ease.',
+  //   techUsed: ['React', 'Tailwind CSS', 'Dictionary API'],
+  //   projectImagePath: '/mobile_images/defino_mobile.png',
+  //   link: 'https://dict-web-app.netlify.app/',
+  //   repo: 'https://github.com/eytanbab/react/tree/master/dictionary-web-app',
+  // },
   // {
   //   projectName: 'Advice Generator',
   //   projectDesc:
