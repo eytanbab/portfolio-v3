@@ -9,7 +9,7 @@ export type projectProps = {
 
 export const projects: projectProps[] = [
   {
-    projectName: 'Applications Tracker',
+    projectName: 'Application Tracker',
     projectDesc:
       'Track and manage your job applications with ease. View detailed application data, analyze trends with interactive charts, and stay organized with customizable filters and status tracking.',
     techUsed: ['Next.js', 'Tailwind CSS', 'Drizzle', 'Neon'],
