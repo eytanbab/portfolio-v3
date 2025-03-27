@@ -10,7 +10,7 @@ const Intro = ({ introRef, setActive }) => {
   const activeInView = useInView(introRef);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const titles = ['Fullstack Developer', 'UX/UI Designer', 'Music Producer'];
+  const titles = ['Frontend Developer', 'UX/UI Designer', 'Music Producer'];
 
   useEffect(() => {
     activeInView ? setActive('intro') : null;
@@ -49,7 +49,7 @@ const Intro = ({ introRef, setActive }) => {
   return (
     <motion.div
       id='intro'
-      className='h-screen w-full flex flex-col items-center justify-center oveflow-hidden relative'
+      className='min-h-screen w-full flex flex-col items-center justify-center oveflow-hidden relative'
     >
       {/* Wrapper */}
       <motion.div

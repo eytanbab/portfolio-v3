@@ -50,14 +50,14 @@ const Projects = ({ projectsRef, setActive }) => {
   return (
     <motion.div
       id='projects'
-      className='h-screen w-full flex flex-col items-center justify-center'
+      className='min-h-screen w-full flex flex-col items-center justify-center'
     >
       {/* Wrapper */}
       <motion.div
         variants={parentVariants}
         initial='hidden'
         animate={isInView ? 'visible' : 'hidden'}
-        className='w-96 max-w-96 flex flex-col items-start gap-2'
+        className='w-full max-w-96  flex flex-col items-start gap-2'
       >
         {/* Title */}
         <motion.div className='relative w-fit' variants={childVariants}>
@@ -86,7 +86,7 @@ const Projects = ({ projectsRef, setActive }) => {
           </motion.div>
         </motion.div>
         {/* Skills */}
-        <motion.div variants={childVariants}>
+        <motion.div variants={childVariants} className='w-full'>
           <Skills />
         </motion.div>
 

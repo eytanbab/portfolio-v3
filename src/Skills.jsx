@@ -44,7 +44,7 @@ const Skills = () => {
         variants={parentVariants}
         initial='hidden'
         animate={isInView ? 'visible' : 'hidden'}
-        className='w-96 max-w-96 grid grid-cols-4 gap-4 place-items-center text-slate-50 mt-8'
+        className='w-full max-w-96 grid grid-cols-4 gap-4 place-items-center text-slate-50 mt-8'
       >
         <motion.div
           variants={childVariants}
