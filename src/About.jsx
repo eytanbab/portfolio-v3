@@ -47,14 +47,14 @@ const About = ({ aboutRef, setActive }) => {
   return (
     <motion.div
       id='about'
-      className='h-screen w-full flex flex-col items-center justify-center'
+      className='min-h-screen w-full flex flex-col items-center justify-center'
     >
       {/* Wrapper */}
       <motion.div
         variants={parentVariants}
         initial='hidden'
         animate={isInView ? 'visible' : 'hidden'}
-        className='w-96 max-w-96 flex flex-col items-start gap-2'
+        className='w-full max-w-96 flex flex-col items-start gap-2'
       >
         {/* Title */}
         <motion.div className='relative' variants={childVariants}>
@@ -70,58 +70,38 @@ const About = ({ aboutRef, setActive }) => {
           />
         </motion.div>
         {/* About Me Section */}
-        <motion.div variants={aboutParentVariants}>
-          <motion.div variants={childVariants}>
-            <motion.p className='font-light text-slate-300'>
-              Hi, I’m <span className='font-medium text-slate-50'>Ethan</span>,
-              a
-              <span className='font-medium text-slate-50'>
-                {' '}
-                Fullstack Developer
-              </span>{' '}
-              with a
-              <span className='font-medium text-slate-50'>
-                {' '}
-                BSc in Software Engineering
-              </span>
-              .
+        <motion.div
+          variants={aboutParentVariants}
+          className='flex flex-col gap-2'
+        >
+          <motion.div variants={childVariants} className='flex flex-col gap-2'>
+            <motion.p>
+              Hi, I’m Ethan, a Frontend Developer with a BSc in Software
+              Engineering.
             </motion.p>
-            <motion.p className='font-light text-slate-300'>
-              I create{' '}
-              <span className='font-medium text-slate-50'>web apps</span> using{' '}
-              <span className='font-medium text-slate-50'>
-                TypeScript, React, and Next.js
-              </span>{' '}
-              for the frontend, and{' '}
-              <span className='font-medium text-slate-50'>
-                Express, MongoDB, Supabase, Drizzle, Neon, and PostgreSQL
-              </span>{' '}
-              for the backend.
+            <motion.p>
+              I focus on frontend development, building web apps using
+              TypeScript, React, and Next.js, with a background in backend
+              technologies like Express and PostgreSQL.
             </motion.p>
+            <motion.p>
+              When I’m not coding, I’m working on music production, a passion
+              I’ve had for 12 years.
+            </motion.p>
+            <motion.p>
+              I’m currently seeking a frontend-oriented role where I can
+              contribute, continue learning, and collaborate with a team.
+            </motion.p>
+          </motion.div>
 
-            <motion.p className='font-light text-slate-300'>
-              Outside of tech, I’ve been into{' '}
-              <span className='font-medium text-slate-50'>
-                music production
-              </span>{' '}
-              for <span className='font-medium text-slate-50'>12 years</span>.
-            </motion.p>
-            <motion.p className='font-light text-slate-300'>
-              I’m{' '}
-              <span className='font-medium text-slate-50'>
-                looking for a role
-              </span>{' '}
-              where I can apply my{' '}
-              <span className='font-medium text-slate-50'>skills</span> to build{' '}
-              <span className='font-medium text-slate-50'>great products</span>.
-            </motion.p>
-
-            {/* Divider */}
-            <motion.div className='my-1 flex gap-1 w-full items-center'>
-              <div className='bg-slate-600/75 flex-1 h-px' />
-              <div className='bg-slate-600 size-1 rounded-full' />
-              <div className='bg-slate-600/75 flex-1 h-px' />
-            </motion.div>
+          {/* Divider */}
+          <motion.div
+            variants={childVariants}
+            className='my-1 flex gap-1 w-full items-center'
+          >
+            <div className='bg-slate-600/75 flex-1 h-px' />
+            <div className='bg-slate-600 size-1 rounded-full' />
+            <div className='bg-slate-600/75 flex-1 h-px' />
           </motion.div>
 
           {/* Work Experience */}
@@ -132,43 +112,35 @@ const About = ({ aboutRef, setActive }) => {
           >
             <motion.div className='text-slate-50 w-full'>
               <motion.h1 className='font-medium'>
-                AI Training Engineer - Fullstack
+                Fullstack Engineer - LLM Training
               </motion.h1>
               <motion.div className='flex justify-between w-full text-slate-300'>
                 <p className='text-sm'>MLG International</p>
                 <p className='text-xs font-light'>Apr 2023 - Current</p>
               </motion.div>
             </motion.div>
-            <motion.ul className='text-sm space-y-1 text-slate-200'>
+            <motion.ul className='text-sm space-y-1 text-slate-50'>
               <li className='ml-4 list-disc'>
-                <span className='text-slate-50 font-medium'>Reviewed</span> and
-                <span className='text-slate-50 font-medium'>
-                  {' '}
-                  optimized code
-                </span>{' '}
-                generated by LLMs in
-                <span className='text-slate-50 font-medium'>
-                  {' '}
-                  Python, JavaScript, and React
-                </span>
-                .
+                Rewrite LLM-generated frontend designs to align with
+                professional standards, focusing on fonts, colors, and UX/UI
+                consistency.
               </li>
               <li className='ml-4 list-disc'>
-                <span className='text-slate-50 font-medium'>Debugged</span> and
-                <span className='text-slate-50 font-medium'>
-                  {' '}
-                  ensured functionality
-                </span>{' '}
-                across multiple frameworks.
+                Refactor LLM-generated React, Next.js, TypeScript, and
+                JavaScript code, improving readability, performance, and
+                functionality.
               </li>
             </motion.ul>
+          </motion.div>
 
-            {/* Divider */}
-            <motion.div className='flex gap-1 w-full items-center'>
-              <div className='bg-slate-600/75 flex-1 h-px' />
-              <div className='bg-slate-600 size-1 rounded-full' />
-              <div className='bg-slate-600/75 flex-1 h-px' />
-            </motion.div>
+          {/* Divider */}
+          <motion.div
+            variants={childVariants}
+            className='my-1 flex gap-1 w-full items-center'
+          >
+            <div className='bg-slate-600/75 flex-1 h-px' />
+            <div className='bg-slate-600 size-1 rounded-full' />
+            <div className='bg-slate-600/75 flex-1 h-px' />
           </motion.div>
 
           {/* Education */}
