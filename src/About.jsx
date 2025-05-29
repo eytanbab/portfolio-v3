@@ -112,10 +112,10 @@ const About = ({ aboutRef, setActive }) => {
           >
             <motion.div className='text-slate-50 w-full'>
               <motion.h1 className='font-medium'>
-                Fullstack Engineer - LLM Training
+                Frontend Engineer - LLM Training
               </motion.h1>
               <motion.div className='flex justify-between w-full text-slate-300'>
-                <p className='text-sm'>MLG International</p>
+                <p className='text-sm'>Outlier AI</p>
                 <p className='text-xs font-light'>Apr 2023 - Current</p>
               </motion.div>
             </motion.div>
