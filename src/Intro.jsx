@@ -136,7 +136,7 @@ const Intro = ({ introRef, setActive }) => {
           <motion.a
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            href='https://drive.google.com/file/d/1yCg-B6YAWPD5iIJHXEJX32xnSSScFd9D/view?usp=sharing'
+            href='https://drive.google.com/file/d/1YZ8XTtdg0EQwroREZhE9k8OArUehKnA4/view?usp=sharing'
             target='_blank'
           >
             <PiReadCvLogo
