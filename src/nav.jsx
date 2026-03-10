@@ -3,7 +3,7 @@ const Nav = ({ active }) => {
   const handleClickScroll = (scrollToElement) => {
     const element = document.getElementById(scrollToElement);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };
 
