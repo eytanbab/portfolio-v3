@@ -7,25 +7,79 @@ export type projectProps = {
   repo: string;
 };
 
+export type educationProps = {
+  title: string;
+  constitute: string;
+  from: string;
+  to: string;
+  place: string;
+};
+
+export type experienceProps = [
+  title: string,
+  company: string,
+  from: string,
+  to: string,
+  responsibilities: string[]
+]
+
+export const experience = [
+  {
+    title: "Frontend Engineer",
+    company: "Outlier AI",
+    from: "Apr 2023",
+    to: "Present",
+    responsibilities: [
+      "Authored production-grade React and TypeScript code snippets to serve as reference implementations for complex state management and UI interactions.","Established benchmarks for code quality by ranking model outputs against semantic HTML and WAI-ARIA accessibility standards.", "Corrected logic flaws and improper implementation patterns in React-based code, replacing deprecated hooks with modern functional components and optimized state management.", "Identified rendering bottlenecks and bundle size issues in generated code to ensure model outputs follow scalable frontend architectures.", "Developed complex coding scenarios to handle edge cases, including API failure states, asynchronous loading indicators, and cross-browser styling to establish high-standard code quality benchmarks.", "Enforced strict TypeScript strict-mode compliance in model outputs by correcting `any` type usage andinterface mismatches to ensure type-safe code generation."
+    ]
+
+  }
+]
+
+export const education: educationProps[] = [
+  {
+    title: "BSc in Software Engineering",
+    constitute: "SCE - Sami Shamoon College of Engineering",
+    from: "Oct 2019",
+    to: "Sep 2023",
+    place: "Be'er Sheva, Israel",
+  },
+  {
+    title: "UX Design",
+    constitute: "Technion – Israel Institute of Technology",
+    from: "Nov 2025",
+    to: "Apr 2026",
+    place: "Tel Aviv, Israel"
+  }
+]
+
 export const projects: projectProps[] = [
+  {
+    projectName: 'City Alerts',
+    projectDesc: "A real-time visualization platform that tracks nationwide siren alerts and regional trends across Israel during the \"Lion\'s Roar\" operation. It provides interactive geospatial mapping and city-level performance metrics, such as peak intensity scores and comparative analysis of localized risk levels.",
+    techUsed: ['Next.js', 'nuqs', 'Tailwind CSS','Shadcn', 'Leaflet'],
+    projectImagePath: '',
+    link: 'https://city-alerts.vercel.app/',
+    repo: 'https://github.com/eytanbab/city-alerts',
+  },
   {
     projectName: 'Application Tracker',
     projectDesc:
       'Track and manage your job applications with ease. View detailed application data, analyze trends with interactive charts, and stay organized with customizable filters and status tracking.',
     techUsed: ['Next.js', 'Tailwind CSS', 'Drizzle', 'Neon'],
     projectImagePath: '/mobile_images/job-application-tracker.png',
-    link: 'https://github.com/eytanbab/job-application-tracker/',
+    link: 'https://apptrackr.vercel.app/',
     repo: 'https://github.com/eytanbab/job-application-tracker/',
   },
-  {
-    projectName: 'Markdown Editor',
-    projectDesc:
-      'Create and manage markdown notes with ease. You can save, edit, and organize your notes, and favorite your most important entries for quick access.',
-    techUsed: ['React', 'Tailwind CSS', 'Supabase'],
-    projectImagePath: '/mobile_images/markdown_editor.png',
-    link: 'https://7wells-markdown-editor.netlify.app/',
-    repo: 'https://github.com/eytanbab/react/tree/master/markdown-editor',
-  },
+  // {
+  //   projectName: 'Markdown Editor',
+  //   projectDesc:
+  //     'Create and manage markdown notes with ease. You can save, edit, and organize your notes, and favorite your most important entries for quick access.',
+  //   techUsed: ['React', 'Tailwind CSS', 'Supabase'],
+  //   projectImagePath: '/mobile_images/markdown_editor.png',
+  //   link: 'https://7wells-markdown-editor.netlify.app/',
+  //   repo: 'https://github.com/eytanbab/react/tree/master/markdown-editor',
+  // },
   {
     projectName: 'Finance Tracker',
     projectDesc:
