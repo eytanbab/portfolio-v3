@@ -1,4 +1,4 @@
-# Ethan Babaev - Full-Stack Developer
+# Ethan Babaev - Frontend Engineer
 
 **View Portfolio:** [https://ethanbabaev.dev/](https://ethanbabaev.dev/)
 
