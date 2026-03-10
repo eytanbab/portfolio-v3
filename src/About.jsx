@@ -1,6 +1,7 @@
 import { motion, useInView } from 'motion/react';
 import { useEffect } from 'react';
 import CTA from './CTA';
+import { education, experience } from '../data';
 
 // eslint-disable-next-line react/prop-types
 const About = ({ aboutRef, setActive }) => {
@@ -47,7 +48,7 @@ const About = ({ aboutRef, setActive }) => {
   return (
     <motion.div
       id='about'
-      className='min-h-screen w-full flex flex-col items-center justify-center'
+      className='min-h-screen w-full flex flex-col items-center justify-center scroll-mt-20'
     >
       {/* Wrapper */}
       <motion.div
@@ -74,7 +75,10 @@ const About = ({ aboutRef, setActive }) => {
           variants={aboutParentVariants}
           className='flex flex-col gap-2'
         >
-          <motion.div variants={childVariants} className='flex flex-col gap-2'>
+          <motion.div
+            variants={childVariants}
+            className='flex flex-col gap-2 text-slate-300'
+          >
             <motion.p>
               Hi, I’m Ethan, a Frontend Developer with a BSc in Software
               Engineering.
@@ -110,27 +114,25 @@ const About = ({ aboutRef, setActive }) => {
             key='button'
             className='flex flex-col items-start gap-1 w-full'
           >
-            <motion.div className='text-slate-50 w-full'>
-              <motion.h1 className='font-medium'>
-                Frontend Engineer - LLM Training
-              </motion.h1>
-              <motion.div className='flex justify-between w-full text-slate-300'>
-                <p className='text-sm'>Outlier AI</p>
-                <p className='text-xs font-light'>Apr 2023 - Current</p>
+            {experience.map((exp) => (
+              <motion.div key={exp.title} className='text-slate-50 w-full'>
+                <motion.h1 className='font-medium'>{exp.title}</motion.h1>
+                <motion.div className='flex justify-between w-full text-slate-300'>
+                  <p className='text-sm'>{exp.company}</p>
+                  <p className='text-xs font-light'>
+                    {exp.from} – {exp.to}
+                  </p>
+                </motion.div>
+                <motion.ul className='text-sm space-y-2 text-slate-300 mt-2'>
+                  {exp.responsibilities.map((resp) => (
+                    <li key={resp} className='ml-4 list-disc'>
+                      {resp}
+                    </li>
+                  ))}
+                </motion.ul>
+                <motion.div />
               </motion.div>
-            </motion.div>
-            <motion.ul className='text-sm space-y-1 text-slate-50'>
-              <li className='ml-4 list-disc'>
-                Rewrite LLM-generated frontend designs to align with
-                professional standards, focusing on fonts, colors, and UX/UI
-                consistency.
-              </li>
-              <li className='ml-4 list-disc'>
-                Refactor LLM-generated React, Next.js, TypeScript, and
-                JavaScript code, improving readability, performance, and
-                functionality.
-              </li>
-            </motion.ul>
+            ))}
           </motion.div>
 
           {/* Divider */}
@@ -145,19 +147,19 @@ const About = ({ aboutRef, setActive }) => {
 
           {/* Education */}
           <motion.div variants={childVariants} className='w-full mt-1'>
-            <motion.div className='text-slate-50 w-full'>
-              <motion.h1 className='font-medium'>
-                BSc in Software Engineering
-              </motion.h1>
-              <motion.div className='flex justify-between w-full text-slate-300'>
-                <p className='text-xs'>
-                  SCE - Sami Shamoon College of Engineering
-                </p>
-                <p className='text-xs font-light'>Oct 2019 – Sep 2023</p>
-              </motion.div>
-              <p className='text-sm font-light mt-1'>
-                Be&apos;er Sheva, Israel
-              </p>
+            <motion.div className='flex flex-col gap-2'>
+              {education.map((edu) => (
+                <motion.div key={edu.title} className='text-slate-50 w-full'>
+                  <motion.h1 className='font-medium'>{edu.title}</motion.h1>
+                  <motion.div className='flex justify-between w-full text-slate-300'>
+                    <p className='text-xs'>{edu.constitute}</p>
+                    <p className='text-xs font-light'>
+                      {edu.from} – {edu.to}
+                    </p>
+                  </motion.div>
+                  <p className='text-sm font-light mt-1'>{edu.place}</p>
+                </motion.div>
+              ))}
             </motion.div>
           </motion.div>
         </motion.div>
